@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="vi" class="locale-vn ua-desktop ua-desktop-other ">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui">
+		<meta name="google-site-verification" content="ZnKhb34tqGH4etOGJS64J7XdaS62pWfDKCBljbTn15w" />
+		<meta name="msvalidate.01" content="18C4FA5D338977C15D10C8F4EBFDF4D1" />
+		
+			<!-- 404c535cfacfd9a327e3d7e994563d54499749cb -->
+	<meta name="description" content="Hãy &quot;Peanuts hóa&quot; hình ảnh của bạn và hóa thân thành chính thành viên Peanuts trong thế giới phim hoạt hình Snoopy - A Peanuts Movie." />
+
+<meta property="og:title" content="Hóa thân thành viên Peanuts"/>
+<meta property="og:description" content="Hãy &quot;Peanuts hóa&quot; hình ảnh của bạn và hóa thân thành chính thành viên Peanuts trong thế giới phim hoạt hình Snoopy - A Peanuts Movie."/>
+<meta property="og:image" content="http://www.peanutizeme.com/images/locale/common/peanuts-social.jpg"/>
+<meta property="og:site_name" content="Peanuts hóa hình ảnh của bạn"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="http://www.peanutizeme.com/vn/" />
+
+<meta name="twitter:title" content="Hóa thân thành viên Peanuts">
+<meta name="twitter:description" content="Peanuts hóa hình ảnh của bạn và hóa thân thành thành viên Peanuts."/>
+<meta name="twitter:image:src" content="http://www.peanutizeme.com/images/locale/common/peanuts-social.jpg" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:site" content="" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content="http://www.peanutizeme.com/vn/" />
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon/favicon-16x16.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="/images/icons/favicon/apple-touch-114x114.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/images/icons/favicon/apple-touch-114x114.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/images/icons/favicon/apple-touch-144x144.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/images/icons/favicon/apple-touch-144x144.png" />
+				<script src="//use.typekit.net/ztg8kwe.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
+	<link rel="stylesheet" href="/js/vendor/videojs/dist/video-js/video-js.min.css" />
+
+	<link rel="stylesheet" href="/css/desktop/main.css">
+	<link rel="stylesheet" href="/css/desktop/vn.css">
+				
+		<title>Hóa thân thành viên Peanuts</title>
+	</head>
+
+	<body ontouchstart>
+						<script>
+		dataLayer = [  ];
+	</script>
+	<!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TJT4P3"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-TJT4P3');</script>
+	<!-- End Google Tag Manager -->
+		
+							<script>
+			window.JS_CONFIG = {"history_base":"/vn/","active_locale":{"name":"vn","langCode":"vi","legalCode":"vn","label":"Việt Nam","visible":true,"default":false,"coppa":false,"active":true,"contentUrl":"http://www.peanutizeme.com/vn/"},"locales":[{"name":"us","langCode":"en-US","legalCode":"us-th","label":"United States","visible":true,"default":true,"coppa":true,"active":false,"contentUrl":"http://www.peanutizeme.com/"},{"name":"latam","langCode":"es","legalCode":"latina","label":"Español","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/latam/"},{"name":"en","langCode":"en","legalCode":"au","label":"Int'l English","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/en/"},{"name":"br","langCode":"pt-BR","legalCode":"br","label":"Brasil","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/br/"},{"name":"cn","langCode":"zh-CN","legalCode":"cn","label":"中国","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/cn/"},{"name":"hk","langCode":"zh-HK","legalCode":"hk","label":"香港","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/hk/"},{"name":"tw","langCode":"zh-TW","legalCode":"tw","label":"繁體","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/tw/"},{"name":"jp","langCode":"ja","legalCode":"jp","label":"日本語","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/jp/"},{"name":"kr","langCode":"ko","legalCode":"kr","label":"한국어","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/kr/"},{"name":"th","langCode":"th","legalCode":"th","label":"ภาษาไทย","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/th/"},{"name":"vn","langCode":"vi","legalCode":"vn","label":"Việt Nam","visible":true,"default":false,"coppa":false,"active":true,"contentUrl":"http://www.peanutizeme.com/vn/"},{"name":"uk","langCode":"en-GB","legalCode":"uk","label":"United Kingdom","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/uk/"},{"name":"de","langCode":"de","legalCode":"de","label":"Deutsch","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/de/"},{"name":"ch-fr","langCode":"fr-CH","legalCode":"ch","label":"Suisse","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/ch-fr/"},{"name":"ch-de","langCode":"de-CH","legalCode":"ch","label":"Schweiz","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/ch-de/"},{"name":"be-fr","langCode":"fr-BE","legalCode":"be-fr","label":"Belgique","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/be-fr/"},{"name":"be-vl","langCode":"nl-BE","legalCode":"be-vl","label":"België","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/be-vl/"},{"name":"fr","langCode":"fr","legalCode":"fr","label":"Français","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/fr/"},{"name":"dk","langCode":"da","legalCode":"dk","label":"Danmark","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/dk/"},{"name":"fi","langCode":"fi","legalCode":"fi","label":"Suomi","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/fi/"},{"name":"nl","langCode":"nl","legalCode":"nl","label":"Nederlands","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/nl/"},{"name":"it","langCode":"it","legalCode":"it","label":"Italiano","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/it/"},{"name":"no","langCode":"nb","legalCode":"no","label":"Norge","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/no/"},{"name":"ru","langCode":"ru","legalCode":"ru","label":"Русский","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/ru/"},{"name":"es","langCode":"es-ES","legalCode":"es","label":"Castellano","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/es/"},{"name":"se","langCode":"sv","legalCode":"se","label":"Sverige","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/se/"},{"name":"cz","langCode":"cs","legalCode":"cz","label":"Česká Republika","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/cz/"},{"name":"sk","langCode":"sk","legalCode":"sk","label":"Slovensko","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/sk/"},{"name":"gr","langCode":"el","legalCode":"gr","label":"Ελλάδα","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/gr/"},{"name":"hu","langCode":"hu","legalCode":"hu","label":"Magyarország","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/hu/"},{"name":"pl","langCode":"pl","legalCode":"pl","label":"Polska","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/pl/"},{"name":"pt","langCode":"pt","legalCode":"pt","label":"Portugal","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/pt/"},{"name":"tr","langCode":"tr","legalCode":"tr","label":"Türkiye","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/tr/"}],"strings":{"config":{"googleAnalytics":{"accountId":"GTM-TJT4P3","dataLayer":""},"facebookAppId":"884981058242914","theatricalSiteUrl":"http://www.phimsnoopy.com","theatricalSiteLabel":"www.phimsnoopy.com"},"trailer":{"youtube":"IfIx6Cm90Xo","mobile":{"poster":null,"mp4":null,"webm":null},"desktop":{"poster":null,"mp4":null,"webm":null}},"meta":{"title":"Hóa thân thành viên Peanuts","descriptionLong":"Hãy \"Peanuts hóa\" hình ảnh của bạn và hóa thân thành chính thành viên Peanuts trong thế giới phim hoạt hình Snoopy - A Peanuts Movie.","descriptionShort":"Peanuts hóa hình ảnh của bạn và hóa thân thành thành viên Peanuts.","facebook":{"siteName":"Peanuts hóa hình ảnh của bạn","imageUrl":"images/locale/common/peanuts-social.jpg"},"twitter":{"handle":null,"imageUrl":"images/locale/common/peanuts-social.jpg"}},"social":{"facebookLink":"https://www.facebook.com/FoxVietNam","twitterLink":null,"instagramLink":null,"youTubeLink":"https://www.youtube.com/user/foxvietnam","googlePlusLink":null,"twitterSharing":{"shareText":"Hãy xem thử nhân vật Peanuts của mình nhé!","shareHashtags":null,"shareVia":null,"shareRelated":null}},"text":{"movieTitle":"Snoopy - A Peanuts Movie","releaseDate":"Khởi chiếu tại rạp 24.12.2015","back":"Quay lại","close":"Đóng","download":"Tải về","language":"Ngôn ngữ","loading":"Ngôn ngữ","menu":"Menu","share":"Chia sẻ","finish":"Kết thúc","avatar":"Ảnh đại diện","wallpaper":"Hình nền","facebook":"Facebook","twitter":"Twitter","oldBrowser":"Trang web này được thiết kế chạy trên các trình duyệt mới nhất. Vui lòng nâng cấp trình duyệt của bạn để trải nghiệm tốt hơn.","tapHold":"Bấm và giữ để tải về","saveSuccess":"Nhân vật đã lưu","rating":{"reasons":null,"links":[{"title":null,"url":null},{"title":null,"url":null}]}},"creator":{"next":"Kế tiếp","save":"Lưu","parts":{"skin":"Da","hair":"Tóc","eyes":"Mắt","mouth":"Miệng","shirt":"Áo","pants":"Quần","shoes":"Giày","accessory":"Phụ kiện","scene":"Cảnh vật","glasses":"Kính","fur":"Fur","collar":"Collar","ears":"Ears","props":"Props"}},"preloader":{"loading":"Đang tải","firstline":"Tạo hình ảnh","secondline":"Peanut của bạn"},"menu":{"newCharacter":"Nhân vật mới","myCharacters":"Nhân vật của tôi","gallery":"Phòng tranh","trailer":"Trailer","dhdLink":null,"dhdText":null,"blurayLink":"http://www.amazon.com/gp/product/B018WXLHVM/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B018WXLHVM&linkCode=as2&tag=foxhe824-20&linkId=B4UP7TJB5J5LGFCW","blurayText":"Buy Blu-ray™ & DVD"},"landing":{"createCharacter":"Tạo nhân vật mới","created":"Đã tạo","edit":"Chỉnh sửa","new":"Mới","headline":"Tạo nhân vật mới","subtext":"Tạo lại hoặc\nchỉnh sửa nhân vật","welcome":"Chào mừng bạn!"},"genderselect":{"boy":"Nam","or":"hoặc","girl":"Nữ"},"speciesselect":{"dog":"Snoopytize","or":"hoặc","human":"Peanutize"},"dogselect":{"small":"Small","medium":"Medium","large":"Large"},"mycharacters":{"created":"Đã tạo","delete":"Xóa","edit":"Chỉnh sửa","new":"Mới"},"notFound":{"header":"Không tìm thấy trang.","message":"Xin lỗi, trang này không tồn tại., Vui lòng quay lại trang chủ và tạo nhân vật mới."},"agegate":{"prompt":"Vui lòng chọn ngày sinh.","selectDate":"Chọn ngày","submit":"Đăng ký","day":"Ngày","month":"Tháng","year":"Năm","january":"Tháng 1","february":"Tháng 2","march":"Tháng 3","april":"Tháng 4","may":"Tháng 5","june":"Tháng 6","july":"Tháng 7","august":"Tháng 8","september":"Tháng 9","october":"Tháng 10","november":"Tháng 11","december":"Tháng 12"},"error":{"saveError":"Lỗi khi lưu nhân vật","ageError":"Chế độ chia sẻ đã tắt.","resize":"Vui lòng chỉnh sửa kích thước trình duyệt.","rotate":"Vui lòng xoay thiết bị của bạn","exitWarning":"Bạn sắp rời khỏi Mái nhà Peanuts.","exitWarningConfirm":"Xác nhận","exitWarningDeny":"Từ chối","selectScene":"Vui lòng chọn cảnh vật."},"ending":{"headline":"Hoàn tất","subtext":"Tải về và chia sẻ nhân vật của bạn ngay nào!"},"computed":{"pageTitle":""}}};
+		</script>
+						<main>
+		<canvas class="stage" id="stage" style="width:100vw; height:100vh"></canvas>
+		<div class="asset-loader not-visible"></div>
+<div class="section preloader-section active" data-name="preloader">
+
+	<div class="logotype-wrapper">
+	<a href="http://www.phimsnoopy.com" target="_blank" class="logotype">
+		<img src="/images/locale/vn/logotype.png" />
+	</a>
+	</div>
+	<div class="character"></div>
+	<div class="content">
+		<h2>Tạo hình ảnh<br />Peanut của bạn</h2>
+		<div class="bar">
+			<div class="wrapper">
+				<div class="progress"></div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+		<div class="section landing-section not-visible" data-name="landing">
+
+			<div class="logotype-wrapper">
+	<a href="http://www.phimsnoopy.com" target="_blank" class="logotype">
+		<img src="/images/locale/vn/logotype.png" />
+	</a>
+	</div>	
+	<div class="snoopy-cta">
+				<img class="sunburst" src="/images/menu/sunburst.png"/>
+				<div class="copy">
+			<h2>New</h2>
+			<h3>Snoopytizer!</h3>
+		</div>
+	</div>
+
+	<ul class="create-character">
+		<h2>Tạo nhân vật mới</h2>
+		<p>Tạo lại hoặc<br />
+chỉnh sửa nhân vật</p>
+		<div class="woodstock"></div>
+		<button class="new">Mới</button>
+		<button class="edit inactive">Chỉnh sửa</button>
+	</ul>
+
+	<button class="left-arrow carousel-controller"></button>
+	<canvas width="71" height="71" 
+		class="right-arrow-timer radial-progress-el"
+		data-rendering="false"
+		data-innerRadius="10" 
+		data-outerRadius="37" 
+		data-fillColor="#105f82" 
+		data-fillPercent="0.45"
+		data-canvasWidth="71"
+		data-canvasHeight="71"
+	></canvas>
+	<button class="right-arrow carousel-controller"></button>
+
+	<div class="bubbles">
+		<div class="text">
+			<span class="head">Đã tạo</span>
+			<span class="sub time"></span>
+		</div>
+	</div>
+</div>
+		<div class="section creator-section not-visible" data-name="creator">
+	<div class="logotype-wrapper">
+	<a href="http://www.phimsnoopy.com" target="_blank" class="logotype">
+		<img src="/images/locale/vn/logotype.png" />
+	</a>
+	</div>
+	<menu class="part-colors"></menu>
+	<menu class="part-types"></menu>
+	<menu class="parts"></menu>
+
+	<button class="left-arrow"></button>
+	<button class="right-arrow"></button>
+
+	<button class="zoom-out"></button>
+	<button class="save"></button>
+	<button class="finish circle-button">Kết thúc</button>
+
+	<label class="parts-label"></label>
+	<label class="parts-label-static"></label>
+
+</div>
+		<div class="section ending-section not-visible" data-name="ending">
+
+	<div class="logotype-wrapper">
+	<a href="http://www.phimsnoopy.com" target="_blank" class="logotype">
+		<img src="/images/locale/vn/logotype.png" />
+	</a>
+	</div>
+	<ul class="end-character">
+		<h2>Hoàn tất</h2>
+		<p>Tải về và chia sẻ nhân vật của bạn ngay nào!</p>
+
+		<div class="action-options options">
+			<button class="left-arrow section-back"></button>
+			<button class="download-character">Tải về</button>
+			<button class="share-character">Chia sẻ
+												<img class="facebook-icon" src="/images/icons/social/facebook.png" />
+				<img class="twitter-icon" src="/images/icons/social/twitter.png" />
+							</button>
+		</div>
+
+		<div class="download-options options">
+			<button class="left-arrow download-back"></button>
+			<label>Bấm và giữ để tải về</label>
+			<div class="option">
+				<a class="primary-button download-avatar" download="peanuts-profile-picture.jpg" target="_blank">
+									Ảnh đại diện
+								</a>
+				<img class="download-avatar-image download-image" />
+				<div class="hold"></div>
+			</div>
+			<div class="option">
+				<a class="primary-button download-wallpaper" download="peanuts-wallpaper.jpg" target="_blank">Hình nền</a>
+				<img class="download-wallpaper-image download-image" />
+				<div class="hold"></div>
+			</div>
+		</div>
+
+		<div class="share-options options">
+			<button class="left-arrow share-back"></button>
+									<button class="primary-button share-facebook disabled">Facebook</button>
+			<button class="primary-button share-twitter disabled">Twitter</button>
+					</div>	
+
+		<div class="woodstock"></div>
+	</ul>
+</div>
+		<div class="section mycharacters-section not-visible" data-name="mycharacters">
+
+	<div class="logotype-wrapper">
+	<a href="http://www.phimsnoopy.com" target="_blank" class="logotype">
+		<img src="/images/locale/vn/logotype.png" />
+	</a>
+	</div>
+	<ul class="character-choice visible">
+		<button class="edit">Chỉnh sửa</button>
+		<button class="delete">Xóa</button>
+		<button class="new">Mới</button>
+			</ul>
+
+	<button class="left-arrow"></button>
+	<button class="right-arrow"></button>
+
+	<div class="woodstock">
+		<div class="bubbles">
+			<div class="text">
+								<span class="head">Đã tạo</span>
+				<span class="sub time"></span>
+							</div>
+		</div>
+		<div class="character"></div>
+	</div>
+</div>
+		<div class="section genderselect-section not-visible" data-name="genderselect">
+
+	<div class="logotype-wrapper">
+	<a href="http://www.phimsnoopy.com" target="_blank" class="logotype">
+		<img src="/images/locale/vn/logotype.png" />
+	</a>
+	</div>
+	<div class="boy select-area"></div>
+	<div class="girl select-area"></div>
+
+	<div class="boy character">
+		<div class="position-wrapper">
+			<div class="scale-wrapper">
+				<img src="/images/gender-select/boy.png" />
+			</div>
+		</div>
+		<label class="gender-label boy">Nam</label>
+	</div>
+
+	<div class="or">hoặc</div>
+
+	<div class="girl character">
+		<div class="position-wrapper">
+			<div class="scale-wrapper">
+				<img src="/images/gender-select/girl.png" />
+			</div>
+		</div>
+		<label class="gender-label girl">Nữ</label>
+	</div>
+	
+</div>
+		<div class="section dogselect-section not-visible" data-name="dogselect">
+
+	<div class="logotype-wrapper">
+	<a href="http://www.phimsnoopy.com" target="_blank" class="logotype">
+		<img src="/images/locale/vn/logotype.png" />
+	</a>
+	</div>
+	<div class="small-dog select-area"></div>
+	<div class="medium-dog select-area"></div>
+	<div class="large-dog select-area"></div>
+
+	<div class="small-dog character">
+		<div class="position-wrapper">
+			<div class="scale-wrapper">
+				<img src="/images/gender-select/dog-small.png" />
+			</div>
+		</div>
+		<label class="dog-label">Small</label>
+	</div>
+
+	<div class="medium-dog character">
+		<div class="position-wrapper">
+			<div class="scale-wrapper">
+				<img src="/images/gender-select/dog-medium.png" />
+			</div>
+		</div>
+		<label class="dog-label">Medium</label>
+	</div>
+
+	<div class="large-dog character">
+		<div class="position-wrapper">
+			<div class="scale-wrapper">
+				<img src="/images/gender-select/dog-large.png" />
+			</div>
+		</div>
+		<label class="dog-label">Large</label>
+	</div>
+	
+</div>
+		<div class="section speciesselect-section not-visible" data-name="speciesselect">
+	<div class="logotype-wrapper">
+	<a href="http://www.phimsnoopy.com" target="_blank" class="logotype">
+		<img src="/images/locale/vn/logotype.png" />
+	</a>
+	</div>
+	<div class="dog select-area"></div>
+	<div class="human select-area"></div>
+
+	<div class="dog character">
+		<div class="position-wrapper">
+			<div class="scale-wrapper">
+				<img src="/images/gender-select/dog-medium.png" />
+			</div>
+		</div>
+		<label class="species-label dog">Snoopytize</label>
+	</div>
+
+	<div class="or">hoặc</div>
+
+	<div class="human character">
+		<div class="position-wrapper">
+			<div class="scale-wrapper">
+				<img src="/images/gender-select/human.png" />
+			</div>
+		</div>
+		<label class="species-label human">Peanutize</label>
+	</div>
+	
+</div>		<div class="modals">
+	<menu class="main-menu modal">
+		<div class="background"></div>
+		<div class="center-menu">
+			<div class="circle-button close-menu"></div>
+									<div class="options">
+				<button class="primary-button new-character">Nhân vật mới</button>
+				<button class="primary-button my-characters">Nhân vật của tôi</button>
+				<button class="primary-button gallery">Phòng tranh</button>
+				<button class="primary-button trailer">Trailer</button>
+				<div class="woodstock"></div>
+				<div class="linus"></div>
+			</div>
+			<div class="social">
+				<a href="https://www.facebook.com/FoxVietNam" target="_blank"><div class="icon facebook is-confirm-exit-link"></div></a>												<a href="https://www.youtube.com/user/foxvietnam" target="_blank"><div class="icon youtube is-confirm-exit-link"></div></a>							</div>
+			<div class="link">
+				<a href="http://www.phimsnoopy.com" class="is-confirm-exit-link">www.phimsnoopy.com</a>
+			</div>
+		</div>
+			</menu>
+	<div class="trailer-overlay modal">
+		<div class="background"></div>
+		<div class="circle-button close-menu"> </div>
+		<div id="trailer-player">
+						<video class="video-js vjs-default-skin" id="vjs-player" poster="">
+				<source src="" type="video/mp4">
+				<source src="" type="video/webm">
+			</video>
+					</div>
+	</div>
+	<div class="age-gate modal">
+		<div class="background"></div>
+		<div class="circle-button close-menu"> </div>
+		<div class="prompt">
+			Vui lòng chọn ngày sinh.
+		</div>
+		<div class="dob">
+			<label class="date-label">Chọn ngày</label>
+			<input class="date" type="date" placeholder="" />
+			<div class="date-dropdown">
+				<select class="primary-select date-month">
+					<option value="-1" disabled selected>Tháng</option>
+					<option value="1">Tháng 1</option>
+					<option value="2">Tháng 2</option>
+					<option value="3">Tháng 3</option>
+					<option value="4">Tháng 4</option>
+					<option value="5">Tháng 5</option>
+					<option value="6">Tháng 6</option>
+					<option value="7">Tháng 7</option>
+					<option value="8">Tháng 8</option>
+					<option value="9">Tháng 9</option>
+					<option value="10">Tháng 10</option>
+					<option value="11">Tháng 11</option>
+					<option value="12">Tháng 12</option>
+				</select>
+				<select class="primary-select date-day">
+					<option value="-1" disabled selected>Ngày</option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					<option>7</option>
+					<option>8</option>
+					<option>9</option>
+					<option>10</option>
+					<option>11</option>
+					<option>12</option>
+					<option>13</option>
+					<option>14</option>
+					<option>15</option>
+					<option>16</option>
+					<option>17</option>
+					<option>18</option>
+					<option>19</option>
+					<option>20</option>
+					<option>21</option>
+					<option>22</option>
+					<option>23</option>
+					<option>24</option>
+					<option>25</option>
+					<option>26</option>
+					<option>27</option>
+					<option>28</option>
+					<option>29</option>
+					<option>30</option>
+					<option>31</option>					
+				</select>
+				<select class="primary-select date-year">
+					<option value="-1" disabled selected>Năm</option>
+					<option>2015</option>
+					<option>2014</option>
+					<option>2013</option>
+					<option>2012</option>
+					<option>2011</option>
+					<option>2010</option>
+					<option>2009</option>
+					<option>2008</option>
+					<option>2007</option>
+					<option>2006</option>
+					<option>2005</option>
+					<option>2004</option>
+					<option>2003</option>
+					<option>2002</option>
+					<option>2001</option>
+					<option>2000</option>
+					<option>1999</option>
+					<option>1998</option>
+					<option>1997</option>
+					<option>1996</option>
+					<option>1995</option>
+					<option>1994</option>
+					<option>1993</option>
+					<option>1992</option>
+					<option>1991</option>
+					<option>1990</option>
+					<option>1989</option>
+					<option>1988</option>
+					<option>1987</option>
+					<option>1986</option>
+					<option>1985</option>
+					<option>1984</option>
+					<option>1983</option>
+					<option>1982</option>
+					<option>1981</option>
+					<option>1980</option>
+					<option>1979</option>
+					<option>1978</option>
+					<option>1977</option>
+					<option>1976</option>
+					<option>1975</option>
+					<option>1974</option>
+					<option>1973</option>
+					<option>1972</option>
+					<option>1971</option>
+					<option>1970</option>
+					<option>1969</option>
+					<option>1968</option>
+					<option>1967</option>
+					<option>1966</option>
+					<option>1965</option>
+					<option>1964</option>
+					<option>1963</option>
+					<option>1962</option>
+					<option>1961</option>
+					<option>1960</option>
+					<option>1959</option>
+					<option>1958</option>
+					<option>1957</option>
+					<option>1956</option>
+					<option>1955</option>
+					<option>1954</option>
+					<option>1953</option>
+					<option>1952</option>
+					<option>1951</option>
+					<option>1950</option>
+					<option>1949</option>
+					<option>1948</option>
+					<option>1947</option>
+					<option>1946</option>
+					<option>1945</option>
+					<option>1944</option>
+					<option>1943</option>
+					<option>1942</option>
+					<option>1941</option>
+					<option>1940</option>
+					<option>1939</option>
+					<option>1938</option>
+					<option>1937</option>
+					<option>1936</option>
+					<option>1935</option>
+					<option>1934</option>
+					<option>1933</option>
+					<option>1932</option>
+					<option>1931</option>
+					<option>1930</option>
+					<option>1929</option>
+					<option>1928</option>
+					<option>1927</option>
+					<option>1926</option>
+					<option>1925</option>
+					<option>1924</option>
+					<option>1923</option>
+					<option>1922</option>
+					<option>1921</option>
+					<option>1920</option>
+					<option>1919</option>
+					<option>1918</option>
+					<option>1917</option>
+					<option>1916</option>
+					<option>1915</option>
+					<option>1914</option>
+					<option>1913</option>				
+				</select>
+			</div>
+			<div class="primary-button submit">Đăng ký</div>
+		</div>
+	</div>
+	<div class="alert modal">
+		<div class="background"></div>
+		<div class="copy">
+			<div class="message"></div>
+			<button class="confirm"></button>
+			<button class="deny"></button>
+		</div>
+	</div>
+	<div class="loading-spinner"></div>
+</div>
+		<button class="open-main-menu"></button>
+<div class="logo">
+	<img class="logo-image" src="/images/icons/nav/logo.png" />
+	<span class="tagline">Menu</span>
+</div>
+
+<div class="sound-toggle"></div>
+
+<img class="hidden-logo" src="/images/locale/vn/logotype.png" />
+<div class="image-cache"></div>	</main>
+
+	<footer>
+		<div class="left">
+	<div class="locale-selector">
+		<label for="locale-selector-element">Ngôn ngữ</label>
+		<select id="locale-selector-element" onchange="document.location = this.value;">
+							<option value="http://www.peanutizeme.com/" 
+									>United States</option>
+							<option value="http://www.peanutizeme.com/latam/" 
+									>Español</option>
+							<option value="http://www.peanutizeme.com/en/" 
+									>Int&#039;l English</option>
+							<option value="http://www.peanutizeme.com/br/" 
+									>Brasil</option>
+							<option value="http://www.peanutizeme.com/cn/" 
+									>中国</option>
+							<option value="http://www.peanutizeme.com/hk/" 
+									>香港</option>
+							<option value="http://www.peanutizeme.com/tw/" 
+									>繁體</option>
+							<option value="http://www.peanutizeme.com/jp/" 
+									>日本語</option>
+							<option value="http://www.peanutizeme.com/kr/" 
+									>한국어</option>
+							<option value="http://www.peanutizeme.com/th/" 
+									>ภาษาไทย</option>
+							<option value="http://www.peanutizeme.com/vn/" 
+					selected				>Việt Nam</option>
+							<option value="http://www.peanutizeme.com/uk/" 
+									>United Kingdom</option>
+							<option value="http://www.peanutizeme.com/de/" 
+									>Deutsch</option>
+							<option value="http://www.peanutizeme.com/ch-fr/" 
+									>Suisse</option>
+							<option value="http://www.peanutizeme.com/ch-de/" 
+									>Schweiz</option>
+							<option value="http://www.peanutizeme.com/be-fr/" 
+									>Belgique</option>
+							<option value="http://www.peanutizeme.com/be-vl/" 
+									>België</option>
+							<option value="http://www.peanutizeme.com/fr/" 
+									>Français</option>
+							<option value="http://www.peanutizeme.com/dk/" 
+									>Danmark</option>
+							<option value="http://www.peanutizeme.com/fi/" 
+									>Suomi</option>
+							<option value="http://www.peanutizeme.com/nl/" 
+									>Nederlands</option>
+							<option value="http://www.peanutizeme.com/it/" 
+									>Italiano</option>
+							<option value="http://www.peanutizeme.com/no/" 
+									>Norge</option>
+							<option value="http://www.peanutizeme.com/ru/" 
+									>Русский</option>
+							<option value="http://www.peanutizeme.com/es/" 
+									>Castellano</option>
+							<option value="http://www.peanutizeme.com/se/" 
+									>Sverige</option>
+							<option value="http://www.peanutizeme.com/cz/" 
+									>Česká Republika</option>
+							<option value="http://www.peanutizeme.com/sk/" 
+									>Slovensko</option>
+							<option value="http://www.peanutizeme.com/gr/" 
+									>Ελλάδα</option>
+							<option value="http://www.peanutizeme.com/hu/" 
+									>Magyarország</option>
+							<option value="http://www.peanutizeme.com/pl/" 
+									>Polska</option>
+							<option value="http://www.peanutizeme.com/pt/" 
+									>Portugal</option>
+							<option value="http://www.peanutizeme.com/tr/" 
+									>Türkiye</option>
+					</select>
+	</div>
+	<div class="legal-logos">
+		<img src="/images/legal/fox-logo.png" />
+		<img src="/images/legal/blue-sky-logo.png" />
+	</div>
+</div>
+		<div class="center">
+	<div class="legal-text">
+		<script src="//www.foxprivacy.com/vn/footer.js" 
+		onload="
+			a = this.parentNode.getElementsByTagName( 'a' ); 
+			for( var i = 0, idur = a.length; i < idur ; i++ ){ 
+				a[i].setAttribute( 'class' , 'is-confirm-exit-link' )
+			}
+		"></script>
+	</div>
+</div>
+	</footer>
+
+			<script src="/js/desktop.js"></script>
+				<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"21de4c302c","applicationID":"16831135","transactionName":"M1xaMRdXWhdTU0NYXgoWeQYRX1sKHW9BX3YhbWc=","queueTime":0,"applicationTime":1593,"atts":"HxtZR19NSRk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
