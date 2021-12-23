@@ -6,12 +6,6 @@
  * Built: 2018-12-04 20:23
  */
 
-// Special item toggles
-var halloweenEnabled = true;
-var holidaysEnabled = true;
-var valentinesEnabled = true;
-var easterEnabled = true;
-
 var requirejs, require, define;
 ! function(global) {
     function isFunction(e) {
@@ -19388,9 +19382,14 @@ define("common/CharacterRenderer", ["common/Camera", "common/SlotDefinitions"], 
                 case "downloadAvatar":
                     r.translate(.5 * t - 40, 160), r.scale(p, p), c = "image/jpeg", h = .75;
                     break;
+                case "characterOnly":
+                    n=e;
+                    _ = 1 / (1622 / s), r.translate(.5 * t - 25, 383), r.scale(_ * p, _ * p), c = "image/png", h = 0, u = 212;
+                    break;
                 default:
                     _ = 1 / (1622 / s), r.translate(.5 * t - 25, 383), r.scale(_ * p, _ * p), c = "image/jpeg", h = .5, u = 212
             }
+            console.log(this.character)
             return this.renderCharacter(r, i || this.prerenderCharacter(this.character, void 0, n, a)), h && (r.restore(), r.drawImage(this.logoImage, t - (this.logoImage.width * h + u), s - (this.logoImage.height * h + l), this.logoImage.width * h, this.logoImage.height * h)), o.toDataURL(c, .95)
         }, s.prototype._watchImageLoad = function(e, t, s, i, n) {
             var o;
@@ -27912,11 +27911,15 @@ define("common/views/EndingView", ["common/views/Section", "common/views/EndingV
         }, i.prototype.onDownloadClick = function(e) {
             return peanuts.audio.ButtonMenuItem.play(), this.actionOptions.classList.remove("active"), this.downloadOptions.classList.add("active"), this.downloadMenu.reset(), this.downloadMenu.initDownload()
         }, i.prototype.onShareClick = function(e) {
+            peanuts.alert.message("Sharing is currently disabled");
+            /* AGE GATE OVERRIDE
+            peanuts.agegate.isVerified = true;
             return peanuts.audio.ButtonMenuItem.play(), peanuts.agegate.open(function(e) {
                 return function(t) {
                     return peanuts.exit.isOldEnough = t, t === !0 ? (e.actionOptions.classList.remove("active"), e.shareOptions.classList.add("active"), e.shareMenu.reset(), e.shareMenu.initShare()) : (e.shareButton.classList.remove("disabled"), e.shareButton.style.display = "none", peanuts.alert.message(JS_CONFIG.strings.error.ageError))
                 }
             }(this))
+            */
         }, i.prototype.onBackClick = function(e) {
             return peanuts.audio.ButtonMenuItem.play(), this.actionOptions.classList.add("active"), this.downloadOptions.classList.remove("active"), this.shareOptions.classList.remove("active")
         }, i.prototype.onSectionBackClick = function() {
@@ -28079,14 +28082,14 @@ define("common/views/GenderSelectView", ["common/views/PreCreatorView", "common/
             return t[Math.floor(Math.random() * t.length)].toString()
         }, i.prototype.createMale = function() {
             var e, i, n, o, r;
-            return peanuts.audio.ButtonMenuItem.play(), peanuts.track.page("Select Boy or Girl", "Boy"), r = this.randomSkin("male"), o = this.randomHair("male"), n = this.randomEyes("male"), i = "m" + r + n + "1p0m180a09000i", window.isGoogle === !0 && (i = i.slice(0, -1) + "z"), e = t.create(i), this.container.classList.remove("active"), this.preload(s.male, e, function(t) {
+            return peanuts.audio.ButtonMenuItem.play(), peanuts.track.page("Select Boy or Girl", "Boy"), r = this.randomSkin("male"), o = this.randomHair("male"), n = this.randomEyes("male"), i = "m" + r + n + "1000000000000e", window.isGoogle === !0 && (i = i.slice(0, -1) + "z"), e = t.create(i), this.container.classList.remove("active"), this.preload(s.male, e, function(t) {
                 return function() {
                     return peanuts.section.render("creator", e), peanuts.creator.resetMenuState()
                 }
             }(this))
         }, i.prototype.createFemale = function() {
             var e, i, n, o, r;
-            return peanuts.audio.ButtonMenuItem.play(), peanuts.track.page("Select Boy or Girl", "Girl"), r = this.randomSkin("female"), o = this.randomHair("female"), n = this.randomEyes("female"), i = "f" + r + n + "1r0k000c09000i", window.isGoogle === !0 && (i = i.slice(0, -1) + "z"), e = t.create(i), this.container.classList.remove("active"), this.preload(s.female, e, function(t) {
+            return peanuts.audio.ButtonMenuItem.play(), peanuts.track.page("Select Boy or Girl", "Girl"), r = this.randomSkin("female"), o = this.randomHair("female"), n = this.randomEyes("female"), i = "f" + r + n + "1000000000000e", window.isGoogle === !0 && (i = i.slice(0, -1) + "z"), e = t.create(i), this.container.classList.remove("active"), this.preload(s.female, e, function(t) {
                 return function() {
                     return peanuts.section.render("creator", e), peanuts.creator.resetMenuState()
                 }
