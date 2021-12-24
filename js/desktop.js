@@ -27959,15 +27959,15 @@ define("common/views/MyCharactersView", ["common/views/PreCreatorView", "common/
     var r;
     return r = function(e) {
         function o() {
-            return this.makeEdit = bind(this.makeEdit, this), this.makeNew = bind(this.makeNew, this), this["delete"] = bind(this["delete"], this), this.noCharacters = bind(this.noCharacters, this), this.inc = bind(this.inc, this), this.dec = bind(this.dec, this), this.onTouchEnd = bind(this.onTouchEnd, this), this.onTouchMove = bind(this.onTouchMove, this), this.onTouchStart = bind(this.onTouchStart, this), o.__super__.constructor.apply(this, arguments)
+            return this.makeEdit = bind(this.makeEdit, this), this.makeNew = bind(this.makeNew, this), this.makeSave = bind(this.makeSave, this), this["delete"] = bind(this["delete"], this), this.noCharacters = bind(this.noCharacters, this), this.inc = bind(this.inc, this), this.dec = bind(this.dec, this), this.onTouchEnd = bind(this.onTouchEnd, this), this.onTouchMove = bind(this.onTouchMove, this), this.onTouchStart = bind(this.onTouchStart, this), o.__super__.constructor.apply(this, arguments)
         }
         return extend(o, e), o.prototype.sectionName = "mycharacters", o.prototype.onInit = function() {
             var e;
             return e = document.querySelector("html").getAttribute("lang"), n.locale(e)
         }, o.prototype.getElements = function() {
-            return this.leftArrowButton = this.container.getElementsByClassName("left-arrow")[0], this.rightArrowButton = this.container.getElementsByClassName("right-arrow")[0], this.bubbles = this.container.getElementsByClassName("bubbles")[0], this.bubbleTime = this.bubbles.getElementsByClassName("time")[0], this.newCharacterButton = this.container.getElementsByClassName("new")[0], this.editCharacterButton = this.container.getElementsByClassName("edit")[0], this.deleteCharacterButton = this.container.getElementsByClassName("delete")[0]
+            return this.leftArrowButton = this.container.getElementsByClassName("left-arrow")[0], this.rightArrowButton = this.container.getElementsByClassName("right-arrow")[0], this.bubbles = this.container.getElementsByClassName("bubbles")[0], this.bubbleTime = this.bubbles.getElementsByClassName("time")[0], this.newCharacterButton = this.container.getElementsByClassName("new")[0], this.editCharacterButton = this.container.getElementsByClassName("edit")[0], this.deleteCharacterButton = this.container.getElementsByClassName("delete")[0], this.saveCharacterButton = this.container.getElementsByClassName("save")[0]
         }, o.prototype.addListeners = function() {
-            return this.leftArrowButton.addEventListener("click", this.dec), this.rightArrowButton.addEventListener("click", this.inc), this.newCharacterButton.addEventListener("click", this.makeNew), this.editCharacterButton.addEventListener("click", this.makeEdit), this.deleteCharacterButton.addEventListener("click", this["delete"]), this.container.addEventListener("touchstart", this.onTouchStart), this.container.addEventListener("touchmove", this.onTouchMove), this.container.addEventListener("touchend", this.onTouchEnd)
+            return this.leftArrowButton.addEventListener("click", this.dec), this.rightArrowButton.addEventListener("click", this.inc), this.newCharacterButton.addEventListener("click", this.makeNew), this.editCharacterButton.addEventListener("click", this.makeEdit), this.deleteCharacterButton.addEventListener("click", this["delete"]), this.saveCharacterButton.addEventListener("click", this.makeSave), this.container.addEventListener("touchstart", this.onTouchStart), this.container.addEventListener("touchmove", this.onTouchMove), this.container.addEventListener("touchend", this.onTouchEnd)
         }, o.prototype.onTouchStart = function(e) {
             return this.touchStart = {
                 x: e.touches[0].clientX,
@@ -28047,6 +28047,14 @@ define("common/views/MyCharactersView", ["common/views/PreCreatorView", "common/
             return peanuts.audio.ButtonMenuItem.play(), window.peanuts.track.page("Delete - My Characters", "delete"), this.recentCharacters[this.characterIndex]["delete"](), this.getRecent(), this.recentCharacters.length > 0 ? this.dec(!0) : void 0
         }, o.prototype.makeNew = function() {
             return peanuts.audio.ButtonMenuItem.play(), window.peanuts.track.page("New - My Characters", "new"), peanuts.section.render("speciesselect")
+        }, o.prototype.makeSave = function() {
+            var e, t;
+            return peanuts.audio.ButtonMenuItem.play(), window.peanuts.track.page("Edit - My Characters", "edit"), e = this.recentCharacters[this.characterIndex], t = i[peanuts.creator.data.cr.getGenderName(e.character_code)], this.preload(t, e, function(t) {
+                return function() {
+                    peanuts.section.render("creator", e)
+                    return peanuts.section.render("ending")
+                }
+            }(this))
         }, o.prototype.makeEdit = function() {
             var e, t;
             return peanuts.audio.ButtonMenuItem.play(), window.peanuts.track.page("Edit - My Characters", "edit"), e = this.recentCharacters[this.characterIndex], t = i[peanuts.creator.data.cr.getGenderName(e.character_code)], this.preload(t, e, function(t) {
