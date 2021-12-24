@@ -10199,8 +10199,8 @@ define("common/views/Section", [], function() {
                 }
             },
             9: {
-                active: halloweenEnabled,
-                halloween: !0,
+                active: holidaysEnabled,
+                holidays: !0,
                 icon: "icons/boys_candycane.jpg",
                 variants: {
                     0: {

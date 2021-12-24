@@ -8,7 +8,7 @@ var easterEnabled = true;
 
 // View character key debug shortcut (c key)
 document.addEventListener("keydown", (e) => {
-    if (e.keyCode == 67 && DEBUG && (peanuts.section.currentSection === "creator" || peanuts.section.currentSection === "ending")) {
+    if (e.keyCode == 75 && DEBUG && (peanuts.section.currentSection === "creator" || peanuts.section.currentSection === "ending")) {
         document.getElementsByClassName("deny")[0].style.display = "none";
         document.querySelector(".alert .message").style.userSelect = "text";
         peanuts.alert.message({
