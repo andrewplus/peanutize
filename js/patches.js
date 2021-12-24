@@ -6,7 +6,7 @@ var holidaysEnabled = true;
 var valentinesEnabled = true;
 var easterEnabled = true;
 
-// View character key debug shortcut (c key)
+// View character key debug shortcut (k key)
 document.addEventListener("keydown", (e) => {
     if (e.keyCode == 75 && DEBUG && (peanuts.section.currentSection === "creator" || peanuts.section.currentSection === "ending")) {
         document.getElementsByClassName("deny")[0].style.display = "none";
