@@ -19389,7 +19389,6 @@ define("common/CharacterRenderer", ["common/Camera", "common/SlotDefinitions"], 
                 default:
                     _ = 1 / (1622 / s), r.translate(.5 * t - 25, 383), r.scale(_ * p, _ * p), c = "image/jpeg", h = .5, u = 212
             }
-            console.log(this.character)
             return this.renderCharacter(r, i || this.prerenderCharacter(this.character, void 0, n, a)), h && (r.restore(), r.drawImage(this.logoImage, t - (this.logoImage.width * h + u), s - (this.logoImage.height * h + l), this.logoImage.width * h, this.logoImage.height * h)), o.toDataURL(c, .95)
         }, s.prototype._watchImageLoad = function(e, t, s, i, n) {
             var o;
@@ -19418,6 +19417,21 @@ define("common/CharacterRenderer", ["common/Camera", "common/SlotDefinitions"], 
             var t, s, i, n, o, r;
             for (null == e && (e = this.characterCode), r = ["m", "f", "a", "b", "c"], o = e.toLowerCase()[0], s = !1, i = 0, n = r.length; n > i; i++) t = r[i], o === t && (s = !0);
             return s ? o : (console.log("Identifier's gender `[" + o + "]` is not valid - please specify m, f, a, b, or c as the gender"), !1)
+        }, s.prototype.getGenderName = function(e) {
+            switch (this.getGender(e)) {
+                case "m":
+                    return "male";
+                case "f":
+                    return "female";
+                case "a":
+                    return "largeDog";
+                case "b":
+                    return "mediumDog";
+                case "c":
+                    return "smallDog";
+                default:
+                    return
+            }
         }, s.prototype.setGender = function(e, s) {
             switch (null == e && (e = this.characterCode), this.gender = this.getGender(e), this.gender) {
                 case "m":
@@ -26991,7 +27005,7 @@ define("common/views/LandingView", ["common/views/PreCreatorView", "common/Chara
                 this.autoTransition(!1), window.peanuts.track.page("New - Main Gallery", "new"), peanuts.audio.ButtonMenuItem.play(), peanuts.section.render("speciesselect")
         }, o.prototype.makeEdit = function() {
             var e, t;
-            return this.timerEl.update("rendering", !1), this.autoTransition(!1), peanuts.audio.ButtonMenuItem.play(), window.peanuts.track.page("Edit - Main Gallery", "edit"), e = s.create(this.recentCharacters[this.characterIndex].character_code), t = "m" === e.character_code.charAt(0).toLowerCase() ? i.male : i.female, this.preload(t, e, function(t) {
+            return this.timerEl.update("rendering", !1), this.autoTransition(!1), peanuts.audio.ButtonMenuItem.play(), window.peanuts.track.page("Edit - Main Gallery", "edit"), e = s.create(this.recentCharacters[this.characterIndex].character_code), t = i[peanuts.creator.data.cr.getGenderName(e.character_code)], this.preload(t, e, function(t) {
                 return function() {
                     return peanuts.section.render("creator", e)
                 }
@@ -28035,7 +28049,7 @@ define("common/views/MyCharactersView", ["common/views/PreCreatorView", "common/
             return peanuts.audio.ButtonMenuItem.play(), window.peanuts.track.page("New - My Characters", "new"), peanuts.section.render("speciesselect")
         }, o.prototype.makeEdit = function() {
             var e, t;
-            return peanuts.audio.ButtonMenuItem.play(), window.peanuts.track.page("Edit - My Characters", "edit"), e = this.recentCharacters[this.characterIndex], t = "m" === e.character_code.charAt(0).toLowerCase() ? i.male : i.female, this.preload(t, e, function(t) {
+            return peanuts.audio.ButtonMenuItem.play(), window.peanuts.track.page("Edit - My Characters", "edit"), e = this.recentCharacters[this.characterIndex], t = i[peanuts.creator.data.cr.getGenderName(e.character_code)], this.preload(t, e, function(t) {
                 return function() {
                     return peanuts.section.render("creator", e)
                 }
