@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html lang="en-US" class="locale-us ua-desktop ua-desktop-other ">
+<html lang="ja" class="locale-jp ua-desktop ua-desktop-other ">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1044.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui">
 		
 			<!-- 404c535cfacfd9a327e3d7e994563d54499749cb -->
-	<meta name="description" content="You&#039;ve already seen yourself Peanutized, now see your dog Snoopytized! THE PEANUTS MOVIE is now available on Digital HD." />
+	<meta name="description" content="スヌーピーキャラクターなって、映画の世界に飛び込もう！" />
 
-<meta property="og:title" content="Get Peanutized | ON BLU-RAY™, DVD &amp; DIGITAL HD"/>
-<meta property="og:description" content="You&#039;ve already seen yourself Peanutized, now see your dog Snoopytized! THE PEANUTS MOVIE is now available on Digital HD."/>
+<meta property="og:title" content="スヌーピーキャラクターになろう！"/>
+<meta property="og:description" content="スヌーピーキャラクターなって、映画の世界に飛び込もう！"/>
 <meta property="og:image" content="http://www.peanutize.xyz/images/locale/us/peanuts-social.jpg"/>
-<meta property="og:site_name" content="The Peanutizer"/>
+<meta property="og:site_name" content="スヌーピーキャラクターをつくろう!"/>
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="http://www.peanutize.xyz" />
+<meta property="og:url" content="http://www.peanutize.xyz/jp" />
 
-<meta name="twitter:title" content="Get Peanutized | ON BLU-RAY™, DVD &amp; DIGITAL HD">
-<meta name="twitter:description" content="Go Nuts with the all-new Snoopytizer"/>
+<meta name="twitter:title" content="スヌーピーキャラクターになろう！">
+<meta name="twitter:description" content="スヌーピーキャラクターになろう！"/>
 <meta name="twitter:image:src" content="http://www.peanutize.xyz/images/locale/us/peanuts-social.jpg" />
-<meta name="twitter:creator" content="@PeanutsMovie" />
-<meta name="twitter:site" content="@PeanutsMovie" />
+<meta name="twitter:creator" content="@SnoopyMovieJP" />
+<meta name="twitter:site" content="@SnoopyMovieJP" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:url" content="http://www.peanutize.xyz" />
+<meta name="twitter:url" content="http://www.peanutize.xyz/jp" />
 
 <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon/favicon-32x32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon/favicon-16x16.png" />
@@ -36,7 +36,7 @@
 	<link rel="stylesheet" href="/css/desktop/main.css">
 	<link rel="stylesheet" href="/css/desktop/us.css">
 				
-		<title>Get Peanutized | ON BLU-RAY™, DVD &amp; DIGITAL HD</title>
+		<title>スヌーピーキャラクターになろう！</title>
 	</head>
 
 	<body ontouchstart>
@@ -44,8 +44,8 @@
 		dataLayer = [  ];
 	</script>
 							<script>
-			window.JS_CONFIG = {"history_base":"/","active_locale":{"name":"us","langCode":"en-US","legalCode":"us-th","label":"United States","visible":true,"default":true,"coppa":true,"active":true,"contentUrl":"http://www.peanutizeme.com/"},"locales":[{"name":"us","langCode":"en-US","legalCode":"us-th","label":"United States","visible":true,"default":true,"coppa":false,"active":true,"contentUrl":"http://www.peanutizeme.com/"},{"name":"latam","langCode":"es","legalCode":"latina","label":"Español","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/latam/"},{"name":"en","langCode":"en","legalCode":"au","label":"Int'l English","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/en/"},{"name":"br","langCode":"pt-BR","legalCode":"br","label":"Brasil","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/br/"},{"name":"cn","langCode":"zh-CN","legalCode":"cn","label":"中国","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/cn/"},{"name":"hk","langCode":"zh-HK","legalCode":"hk","label":"香港","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/hk/"},{"name":"tw","langCode":"zh-TW","legalCode":"tw","label":"繁體","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/tw/"},{"name":"jp","langCode":"ja","legalCode":"jp","label":"日本語","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/jp/"},{"name":"kr","langCode":"ko","legalCode":"kr","label":"한국어","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/kr/"},{"name":"th","langCode":"th","legalCode":"th","label":"ภาษาไทย","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/th/"},{"name":"vn","langCode":"vi","legalCode":"vn","label":"Việt Nam","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/vn/"},{"name":"uk","langCode":"en-GB","legalCode":"uk","label":"United Kingdom","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/uk/"},{"name":"de","langCode":"de","legalCode":"de","label":"Deutsch","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/de/"},{"name":"ch-fr","langCode":"fr-CH","legalCode":"ch","label":"Suisse","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/ch-fr/"},{"name":"ch-de","langCode":"de-CH","legalCode":"ch","label":"Schweiz","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/ch-de/"},{"name":"be-fr","langCode":"fr-BE","legalCode":"be-fr","label":"Belgique","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/be-fr/"},{"name":"be-vl","langCode":"nl-BE","legalCode":"be-vl","label":"België","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/be-vl/"},{"name":"fr","langCode":"fr","legalCode":"fr","label":"Français","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/fr/"},{"name":"dk","langCode":"da","legalCode":"dk","label":"Danmark","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/dk/"},{"name":"fi","langCode":"fi","legalCode":"fi","label":"Suomi","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/fi/"},{"name":"nl","langCode":"nl","legalCode":"nl","label":"Nederlands","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/nl/"},{"name":"it","langCode":"it","legalCode":"it","label":"Italiano","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/it/"},{"name":"no","langCode":"nb","legalCode":"no","label":"Norge","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/no/"},{"name":"ru","langCode":"ru","legalCode":"ru","label":"Русский","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/ru/"},{"name":"es","langCode":"es-ES","legalCode":"es","label":"Castellano","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/es/"},{"name":"se","langCode":"sv","legalCode":"se","label":"Sverige","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/se/"},{"name":"cz","langCode":"cs","legalCode":"cz","label":"Česká Republika","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/cz/"},{"name":"sk","langCode":"sk","legalCode":"sk","label":"Slovensko","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/sk/"},{"name":"gr","langCode":"el","legalCode":"gr","label":"Ελλάδα","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/gr/"},{"name":"hu","langCode":"hu","legalCode":"hu","label":"Magyarország","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/hu/"},{"name":"pl","langCode":"pl","legalCode":"pl","label":"Polska","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/pl/"},{"name":"pt","langCode":"pt","legalCode":"pt","label":"Portugal","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/pt/"},{"name":"tr","langCode":"tr","legalCode":"tr","label":"Türkiye","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/tr/"}],"strings":{"config":{"googleAnalytics":{"accountId":"GTM-W368MM","dataLayer":""},"facebookAppId":"884981058242914","theatricalSiteUrl":"http://www.peanutsmovie.com","theatricalSiteLabel":"peanutsmovie.com"},"trailer":{"youtube":"1HC_jgIldzE","mobile":{"poster":"/videos/peanuts-ultimate-adventure-dhd.jpg","mp4":"/videos/peanuts-ultimate-adventure-dhd.mp4","webm":"/videos/peanuts-ultimate-adventure-dhd.webm"},"desktop":{"poster":"/videos/peanuts-ultimate-adventure-dhd.jpg","mp4":"/videos/peanuts-ultimate-adventure-dhd.mp4","webm":"/videos/peanuts-ultimate-adventure-dhd.webm"}},"meta":{"title":"Get Peanutized | ON BLU-RAY™, DVD & DIGITAL HD","descriptionLong":"You've already seen yourself Peanutized, now see your dog Snoopytized! THE PEANUTS MOVIE is now available on Digital HD.","descriptionShort":"Go Nuts with the all-new Snoopytizer","facebook":{"siteName":"The Peanutizer","imageUrl":"images/locale/us/peanuts-social.jpg"},"twitter":{"handle":"@PeanutsMovie","imageUrl":"images/locale/us/peanuts-social.jpg"}},"social":{"facebookLink":"https://www.facebook.com/PeanutsMovie","twitterLink":"https://twitter.com/PeanutsMovie","instagramLink":"https://instagram.com/PeanutsMovie/","youTubeLink":"https://www.youtube.com/user/peanutsmovie","googlePlusLink":"https://plus.google.com/+PeanutsMovie","twitterSharing":{"shareText":"Check out my #PeanutsMovie character!","shareHashtags":"","shareVia":"PeanutsMovie","shareRelated":"PeanutsMovie"}},"text":{"movieTitle":"The Peanuts Movie","releaseDate":"ON BLU-RAY™, DVD & DIGITAL HD","back":"Back","close":"Close","download":"Download","language":"Language","loading":"Loading","menu":"Menu","share":"Share","finish":"Finish","avatar":"Profile PIcture","wallpaper":"Wallpaper","facebook":"Facebook","twitter":"Twitter","oldBrowser":"This site is designed for the latest web browsers. Upgrade yours for the best experience.","tapHold":"Tap and hold to save","saveSuccess":"Character Saved","rating":{"reasons":"For rating reasons, go to","links":[{"title":"mpaa.org","url":"http://www.mpaa.org/"},{"title":"filmratings.com","url":"http://filmratings.com/"}]}},"creator":{"next":"NEXT","save":"SAVE","parts":{"skin":"Skin","hair":"Hair","eyes":"Eyes","mouth":"Mouth","shirt":"Shirt","pants":"Pants","shoes":"Shoes","accessory":"Accessories","scene":"Scene","glasses":"Glasses","fur":"Fur","collar":"Collar","ears":"Ears","props":"Props"}},"preloader":{"loading":"Loading...","firstline":"Get","secondline":"Peanutized!"},"menu":{"newCharacter":"New Character","myCharacters":"My Characters","gallery":"Gallery","trailer":"Video","dhdLink":"http://www.foxdigitalhd.com/the-peanuts-movie?utm_source=peanutizer&utm_medium=buy&utm_campaign=peanutizer#digitalhd","dhdText":"Buy Digital HD","blurayLink":"http://www.amazon.com/gp/product/B018WXLHVM/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B018WXLHVM&linkCode=as2&tag=foxhe824-20&linkId=B4UP7TJB5J5LGFCW","blurayText":"Buy Blu-ray™ & DVD"},"landing":{"createCharacter":"Create a Character!","created":"Created","edit":"Edit","new":"New","headline":"Create a Character!","subtext":"Start fresh or edit this character!","welcome":"Welcome!"},"genderselect":{"boy":"Boy","or":"or","girl":"Girl"},"speciesselect":{"dog":"Snoopytize","or":"or","human":"Peanutize"},"dogselect":{"small":"Small","medium":"Medium","large":"Large"},"mycharacters":{"created":"Created","delete":"Delete","edit":"Edit","new":"New"},"notFound":{"header":"Page Not Found","message":"Sorry, the page does not exist.\u003Cbr /\u003ETry the \u003Ca href=\"/\"\u003Emain page\u003C/a\u003E to create a character."},"agegate":{"prompt":"Please enter your date of birth","selectDate":"Select Date","submit":"Submit","day":"Day","month":"Month","year":"Year","january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"},"error":{"saveError":"Error saving character.","ageError":"Sharing has been disabled.","resize":"Please resize your browser.","rotate":"Please rotate your device.","exitWarning":"You're about to leave Peanutize Me!","exitWarningConfirm":"Ok!","exitWarningDeny":"No Thanks!","selectScene":"Please select a scene!"},"ending":{"headline":"You're All Done!","subtext":"Now download and share your creation!"},"computed":{"pageTitle":""}}};
-		</script>
+			window.JS_CONFIG = {"history_base":"/jp/","active_locale":{"name":"jp","langCode":"ja","legalCode":"jp","label":"日本語","visible":true,"default":false,"coppa":false,"active":true,"contentUrl":"http://www.peanutizeme.com/jp/"},"locales":[{"name":"us","langCode":"en-US","legalCode":"us-th","label":"United States","visible":true,"default":true,"coppa":true,"active":false,"contentUrl":"http://www.peanutizeme.com/"},{"name":"latam","langCode":"es","legalCode":"latina","label":"Español","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/latam/"},{"name":"en","langCode":"en","legalCode":"au","label":"Int'l English","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/en/"},{"name":"br","langCode":"pt-BR","legalCode":"br","label":"Brasil","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/br/"},{"name":"cn","langCode":"zh-CN","legalCode":"cn","label":"中国","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/cn/"},{"name":"hk","langCode":"zh-HK","legalCode":"hk","label":"香港","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/hk/"},{"name":"tw","langCode":"zh-TW","legalCode":"tw","label":"繁體","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/tw/"},{"name":"jp","langCode":"ja","legalCode":"jp","label":"日本語","visible":true,"default":false,"coppa":false,"active":true,"contentUrl":"http://www.peanutizeme.com/jp/"},{"name":"kr","langCode":"ko","legalCode":"kr","label":"한국어","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/kr/"},{"name":"th","langCode":"th","legalCode":"th","label":"ภาษาไทย","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/th/"},{"name":"vn","langCode":"vi","legalCode":"vn","label":"Việt Nam","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/vn/"},{"name":"uk","langCode":"en-GB","legalCode":"uk","label":"United Kingdom","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/uk/"},{"name":"de","langCode":"de","legalCode":"de","label":"Deutsch","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/de/"},{"name":"ch-fr","langCode":"fr-CH","legalCode":"ch","label":"Suisse","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/ch-fr/"},{"name":"ch-de","langCode":"de-CH","legalCode":"ch","label":"Schweiz","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/ch-de/"},{"name":"be-fr","langCode":"fr-BE","legalCode":"be-fr","label":"Belgique","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/be-fr/"},{"name":"be-vl","langCode":"nl-BE","legalCode":"be-vl","label":"België","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/be-vl/"},{"name":"fr","langCode":"fr","legalCode":"fr","label":"Français","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/fr/"},{"name":"dk","langCode":"da","legalCode":"dk","label":"Danmark","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/dk/"},{"name":"fi","langCode":"fi","legalCode":"fi","label":"Suomi","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/fi/"},{"name":"nl","langCode":"nl","legalCode":"nl","label":"Nederlands","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/nl/"},{"name":"it","langCode":"it","legalCode":"it","label":"Italiano","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/it/"},{"name":"no","langCode":"nb","legalCode":"no","label":"Norge","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/no/"},{"name":"ru","langCode":"ru","legalCode":"ru","label":"Русский","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/ru/"},{"name":"es","langCode":"es-ES","legalCode":"es","label":"Castellano","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/es/"},{"name":"se","langCode":"sv","legalCode":"se","label":"Sverige","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/se/"},{"name":"cz","langCode":"cs","legalCode":"cz","label":"Česká Republika","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/cz/"},{"name":"sk","langCode":"sk","legalCode":"sk","label":"Slovensko","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/sk/"},{"name":"gr","langCode":"el","legalCode":"gr","label":"Ελλάδα","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/gr/"},{"name":"hu","langCode":"hu","legalCode":"hu","label":"Magyarország","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/hu/"},{"name":"pl","langCode":"pl","legalCode":"pl","label":"Polska","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/pl/"},{"name":"pt","langCode":"pt","legalCode":"pt","label":"Portugal","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/pt/"},{"name":"tr","langCode":"tr","legalCode":"tr","label":"Türkiye","visible":true,"default":false,"coppa":false,"active":false,"contentUrl":"http://www.peanutizeme.com/tr/"}],"strings":{"config":{"googleAnalytics":{"accountId":"GTM-TJT4P3","dataLayer":""},"facebookAppId":"884981058242914","theatricalSiteUrl":"http://www.foxmovies-jp.com/snoopy/","theatricalSiteLabel":"www.foxmovies-jp.com/snoopy"},"trailer":{"youtube":"mn7hTbOi8Po","mobile":{"poster":null,"mp4":null,"webm":null},"desktop":{"poster":null,"mp4":null,"webm":null}},"meta":{"title":"スヌーピーキャラクターになろう！","descriptionLong":"スヌーピーキャラクターなって、映画の世界に飛び込もう！","descriptionShort":"スヌーピーキャラクターになろう！","facebook":{"siteName":"スヌーピーキャラクターをつくろう!","imageUrl":"images/locale/common/peanuts-social.jpg"},"twitter":{"handle":"@SnoopyMovieJP","imageUrl":"images/locale/common/peanuts-social.jpg"}},"social":{"facebookLink":"https://www.facebook.com/SnoopyMovieJP","twitterLink":"https://twitter.com/SnoopyMovieJP","instagramLink":"https://instagram.com/ilovesnoopy_movie_jp/","youTubeLink":"https://www.youtube.com/playlist?list=PL8lxisQyPAeXQvBaZgT7VHTXWd9_4-tlU","googlePlusLink":null,"twitterSharing":{"shareText":"スヌーピーキャラクターを作ったよ！　チェックしてね！","shareHashtags":null,"shareVia":"SnoopyMovieJP","shareRelated":null}},"text":{"movieTitle":"I LOVE スヌーピー THE PEANUTS MOVIE","releaseDate":"12月4日（金）ロードショー","back":"もどる","close":"とじる","download":"ダウンロード","language":"言語","loading":"読み込み中","menu":"メニュー","share":"シェアする","finish":"作成完了","avatar":"プロフィール画像","wallpaper":"壁紙","facebook":"Facebook","twitter":"Twitter","oldBrowser":"ブラウザを最新バージョンにアップデートしてご覧ください","tapHold":"タップ長押しでダウンロード","saveSuccess":"キャラクターが保存されました","rating":{"reasons":null,"links":[{"title":null,"url":null},{"title":null,"url":null}]}},"creator":{"next":"次","save":"保存する","parts":{"skin":"肌の色","hair":"かみの毛","eyes":"まゆ毛","mouth":"口","shirt":"シャツ","pants":"ズボン","shoes":"くつ","accessory":"アクセサリー","scene":"シーン","glasses":"メガネ","fur":"Fur","collar":"Collar","ears":"Ears","props":"Props"}},"preloader":{"loading":"読み込み中…","firstline":"スヌーピーキャラクターを","secondline":"ゲットしよう！"},"menu":{"newCharacter":"新しいキャラクター","myCharacters":"マイキャラクター","gallery":"ギャラリー","trailer":"予告編","dhdLink":null,"dhdText":null,"blurayLink":"http://www.amazon.com/gp/product/B018WXLHVM/ref=as_li_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=B018WXLHVM&linkCode=as2&tag=foxhe824-20&linkId=B4UP7TJB5J5LGFCW","blurayText":"Buy Blu-ray™ & DVD"},"landing":{"createCharacter":"スヌーピーキャラクターをつくろう！","created":"作成","edit":"編集する","new":"新規作成","headline":"スヌーピー\\nキャラクターを\\nつくろう！","subtext":"きみだけのキャラクターをつくったり、編集したりできるよ！","welcome":"ようこそ！"},"genderselect":{"boy":"男の子","or":"または","girl":"女の子"},"speciesselect":{"dog":"Snoopytize","or":"または","human":"Peanutize"},"dogselect":{"small":"Small","medium":"Medium","large":"Large"},"mycharacters":{"created":"作成","delete":"削除する","edit":"編集する","new":"新規作成"},"notFound":{"header":"ページが見つかりません","message":"ページが存在しません"},"agegate":{"prompt":"生年月日を入力してください","selectDate":"日付をえらぶ","submit":"登録する","day":"日","month":"月","year":"年","january":"1月","february":"2月","march":"3月","april":"4月","may":"5月","june":"6月","july":"7月","august":"8月","september":"9月","october":"10月","november":"11月","december":"12月"},"error":{"saveError":"キャラクターを保存できませんでした","ageError":"シェアできませんでした","resize":"ブラウザのサイズを調整してください","rotate":"画面の向きを変更してください","exitWarning":"終了しますか？","exitWarningConfirm":"はい","exitWarningDeny":"いいえ","selectScene":"シーンをえらんでください"},"ending":{"headline":"完成！","subtext":"きみだけのキャラクターをダウンロード＆シェアしよう！"},"computed":{"pageTitle":""}}};
+		</script> 
 						<main>
 		<canvas class="stage" id="stage" style="width:100vw; height:100vh"></canvas>
 		<div class="asset-loader not-visible"></div>
@@ -53,13 +53,13 @@
 
 	<div class="logotype-wrapper">
 	<a href="http://www.peanutsmovie.com" target="_blank" class="logotype">
-		<img src="/images/locale/us/logotype.png" />
+		<img src="/images/locale/jp/logotype.png" />
 	</a>
 		<div class="buynow"><button class="buy">MORE</button></div>
 	</div>
 	<div class="character"></div>
 	<div class="content">
-		<h2>Get<br />Peanutized!</h2>
+		<h2>スヌーピーキャラクターを<br />ゲットしよう！</h2>
 		<p style="color:white; font-family: snoopyregular,sans-serif; text-shadow: 0 3px 2px #1a3787; text-transform: uppercase; font-size: 35px; margin-bottom: 20px;">Unofficial Fan Archive</p>
 		<div class="bar">
 			<div class="wrapper">
@@ -73,7 +73,7 @@
 
 			<div class="logotype-wrapper">
 	<a href="http://www.peanutsmovie.com" target="_blank" class="logotype">
-		<img src="/images/locale/us/logotype.png" />
+		<img src="/images/locale/jp/logotype.png" />
 	</a>
 		<div class="buynow"><button class="buy">MORE</button></div>
 	</div>	
@@ -86,11 +86,11 @@
 	</div>
 
 	<ul class="create-character">
-		<h2>Create a Character!</h2>
-		<p>Start fresh or edit this character!</p>
+		<h2>スヌーピー\nキャラクターを\nつくろう！</h2>
+		<p>きみだけのキャラクターをつくったり、編集したりできるよ！</p>
 		<div class="woodstock"></div>
-		<button class="new">New</button>
-		<button class="edit inactive">Edit</button>
+		<button class="new">新規作成</button>
+		<button class="edit inactive">編集する</button>
 	</ul>
 
 	<button class="left-arrow carousel-controller"></button>
@@ -108,7 +108,7 @@
 
 	<div class="bubbles">
 		<div class="text">
-			<span class="head">Created</span>
+			<span class="head">作成</span>
 			<span class="sub time"></span>
 		</div>
 	</div>
@@ -116,7 +116,7 @@
 		<div class="section creator-section not-visible" data-name="creator">
 	<div class="logotype-wrapper">
 	<a href="http://www.peanutsmovie.com" target="_blank" class="logotype">
-		<img src="/images/locale/us/logotype.png" />
+		<img src="/images/locale/jp/logotype.png" />
 	</a>
 		<div class="buynow"><button class="buy">MORE</button></div>
 	</div>
@@ -129,7 +129,7 @@
 
 	<button class="zoom-out"></button>
 	<button class="save"></button>
-	<button class="finish circle-button">Finish</button>
+	<button class="finish circle-button">作成完了</button>
 
 	<label class="parts-label"></label>
 	<label class="parts-label-static"></label>
@@ -139,18 +139,18 @@
 
 	<div class="logotype-wrapper">
 	<a href="http://www.peanutsmovie.com" target="_blank" class="logotype">
-		<img src="/images/locale/us/logotype.png" />
+		<img src="/images/locale/jp/logotype.png" />
 	</a>
 		<div class="buynow"><button class="buy">MORE</button></div>
 	</div>
 	<ul class="end-character">
-		<h2>You&#039;re All Done!</h2>
-		<p>Now download and share your creation!</p>
+		<h2>完成！</h2>
+		<p>きみだけのキャラクターをダウンロード＆シェアしよう！</p>
 
 		<div class="action-options options">
 			<button class="left-arrow section-back"></button>
-			<button class="download-character">Download</button>
-			<button class="share-character">Share
+			<button class="download-character">ダウンロード</button>
+			<button class="share-character">シェアする
 												<img class="facebook-icon" src="/images/icons/social/facebook.png" />
 				<img class="twitter-icon" src="/images/icons/social/twitter.png" />
 							</button>
@@ -158,21 +158,21 @@
 
 		<div class="download-options options">
 			<button class="left-arrow download-back"></button>
-			<label>Tap and hold to save</label>
+			<label>タップ長押しでダウンロード</label>
 			<div class="option">
 				<a class="primary-button download-avatar" download="peanuts-profile-picture.jpg" target="_blank">
-									Profile Picture
+					プロフィール画像
 								</a>
 				<img class="download-avatar-image download-image" />
 				<div class="hold"></div>
 			</div>
 			<div class="option">
-				<a class="primary-button download-wallpaper" download="peanuts-wallpaper.jpg" target="_blank">Wallpaper</a>
+				<a class="primary-button download-wallpaper" download="peanuts-wallpaper.jpg" target="_blank">壁紙</a>
 				<img class="download-wallpaper-image download-image" />
 				<div class="hold"></div>
 			</div>
 			<div class="option">
-				<a class="primary-button download-characterOnly" target="_blank">Character Only</a>
+				<a class="primary-button download-characterOnly" target="_blank">透明な背景</a>
 				<img class="download-characterOnly-image download-image" />
 				<div class="hold"></div>
 			</div>
@@ -191,15 +191,15 @@
 
 	<div class="logotype-wrapper">
 	<a href="http://www.peanutsmovie.com" target="_blank" class="logotype">
-		<img src="/images/locale/us/logotype.png" />
+		<img src="/images/locale/jp/logotype.png" />
 	</a>
 		<div class="buynow"><button class="buy">MORE</button></div>
 	</div>
 	<ul class="character-choice visible">
-		<button class="edit">Edit</button>
-		<button class="delete">Delete</button>
-		<button class="save">Save</button>
-		<button class="new">New</button>
+		<button class="edit">編集する</button>
+		<button class="delete">削除する</button>
+		<button class="save">ダウンロード</button>
+		<button class="new">新規作成</button>
 			</ul>
 
 	<button class="left-arrow"></button>
@@ -208,7 +208,7 @@
 	<div class="woodstock">
 		<div class="bubbles">
 			<div class="text">
-								<span class="head">Created</span>
+								<span class="head">作成</span>
 				<span class="sub time"></span>
 							</div>
 		</div>
@@ -219,7 +219,7 @@
 
 	<div class="logotype-wrapper">
 	<a href="http://www.peanutsmovie.com" target="_blank" class="logotype">
-		<img src="/images/locale/us/logotype.png" />
+		<img src="/images/locale/jp/logotype.png" />
 	</a>
 		<div class="buynow"><button class="buy">MORE</button></div>
 	</div>
@@ -232,10 +232,10 @@
 				<img src="/images/gender-select/boy.png" />
 			</div>
 		</div>
-		<label class="gender-label boy">Boy</label>
+		<label class="gender-label boy">男の子</label>
 	</div>
 
-	<div class="or">or</div>
+	<div class="or">または</div>
 
 	<div class="girl character">
 		<div class="position-wrapper">
@@ -243,7 +243,7 @@
 				<img src="/images/gender-select/girl.png" />
 			</div>
 		</div>
-		<label class="gender-label girl">Girl</label>
+		<label class="gender-label girl">女の子</label>
 	</div>
 	
 </div>
@@ -251,7 +251,7 @@
 
 	<div class="logotype-wrapper">
 	<a href="http://www.peanutsmovie.com" target="_blank" class="logotype">
-		<img src="/images/locale/us/logotype.png" />
+		<img src="/images/locale/jp/logotype.png" />
 	</a>
 		<div class="buynow"><button class="buy">MORE</button></div>
 	</div>
@@ -290,7 +290,7 @@
 		<div class="section speciesselect-section not-visible" data-name="speciesselect">
 	<div class="logotype-wrapper">
 	<a href="http://www.peanutsmovie.com" target="_blank" class="logotype">
-		<img src="/images/locale/us/logotype.png" />
+		<img src="/images/locale/jp/logotype.png" />
 	</a>
 		<div class="buynow"><button class="buy">MORE</button></div>
 	</div>
@@ -306,7 +306,7 @@
 		<label class="species-label dog">Snoopytize</label>
 	</div>
 
-	<div class="or">or</div>
+	<div class="or">または</div>
 
 	<div class="human character">
 		<div class="position-wrapper">
@@ -328,17 +328,17 @@
 				<div class="woodstock"></div>
 			</div>
 						<div class="options">
-				<button class="primary-button new-character">New Character</button>
-				<button class="primary-button my-characters">My Characters</button>
-				<button class="primary-button gallery">Gallery</button>
-				<button class="primary-button trailer">Video</button>
+				<button class="primary-button new-character">新しいキャラクター</button>
+				<button class="primary-button my-characters">マイキャラクター</button>
+				<button class="primary-button gallery">ギャラリー</button>
+				<button class="primary-button trailer">予告編</button>
 				<div class="woodstock"></div>
 				<div class="linus"></div>
 			</div>
 			<div class="social">
 				<a href="https://www.facebook.com/PeanutsMovie" target="_blank"><div class="icon facebook is-confirm-exit-link"></div></a>				<a href="https://twitter.com/PeanutsMovie" target="_blank"><div class="icon twitter is-confirm-exit-link"></div></a>				<a href="https://instagram.com/PeanutsMovie/" target="_blank"><div class="icon instagram is-confirm-exit-link"></div></a>				<a href="https://www.youtube.com/user/peanutsmovie" target="_blank"><div class="icon youtube is-confirm-exit-link"></div></a>				<a href="https://plus.google.com/+PeanutsMovie" target="_blank"><div class="icon gplus is-confirm-exit-link"></div></a>			</div>
 			<div class="link">
-				<a href="http://www.peanutsmovie.com" class="is-confirm-exit-link">peanutsmovie.com</a>
+				<a href="http://www.foxmovies-jp.com/snoopy" class="is-confirm-exit-link">www.foxmovies-jp.com/snoopy</a>
 			</div>
 		</div>
 			</menu>
@@ -356,29 +356,29 @@
 		<div class="background"></div>
 		<div class="circle-button close-menu"> </div>
 		<div class="prompt">
-			Please enter your date of birth
+			生年月日を入力してください
 		</div>
 		<div class="dob">
 			<label class="date-label">Select Date</label>
 			<input class="date" type="date" placeholder="" />
 			<div class="date-dropdown">
 				<select class="primary-select date-month">
-					<option value="-1" disabled selected>Month</option>
-					<option value="1">January</option>
-					<option value="2">February</option>
-					<option value="3">March</option>
-					<option value="4">April</option>
-					<option value="5">May</option>
-					<option value="6">June</option>
-					<option value="7">July</option>
-					<option value="8">August</option>
-					<option value="9">September</option>
-					<option value="10">October</option>
-					<option value="11">November</option>
-					<option value="12">December</option>
+					<option value="-1" disabled selected>月</option>
+					<option value="1">1月</option>
+					<option value="2">2月</option>
+					<option value="3">3月</option>
+					<option value="4">4月</option>
+					<option value="5">5月</option>
+					<option value="6">6月</option>
+					<option value="7">7月</option>
+					<option value="8">8月</option>
+					<option value="9">9月</option>
+					<option value="10">10月</option>
+					<option value="11">11月</option>
+					<option value="12">12月</option>
 				</select>
 				<select class="primary-select date-day">
-					<option value="-1" disabled selected>Day</option>
+					<option value="-1" disabled selected>日</option>
 					<option>1</option>
 					<option>2</option>
 					<option>3</option>
@@ -412,7 +412,7 @@
 					<option>31</option>					
 				</select>
 				<select class="primary-select date-year">
-					<option value="-1" disabled selected>Year</option>
+					<option value="-1" disabled selected>年</option>
 					<option>2015</option>
 					<option>2014</option>
 					<option>2013</option>
@@ -518,7 +518,7 @@
 					<option>1913</option>				
 				</select>
 			</div>
-			<div class="primary-button submit">Submit</div>
+			<div class="primary-button submit">登録する</div>
 		</div>
 	</div>
 	<div class="alert modal">
@@ -534,24 +534,24 @@
 		<button class="open-main-menu"></button>
 <div class="logo">
 	<img class="logo-image" src="/images/icons/nav/logo.png" />
-	<span class="tagline">Menu</span>
+	<span class="tagline">メニュー</span>
 </div>
 
 <div class="sound-toggle"></div>
 
-<img class="hidden-logo" src="/images/locale/us/logotype.png" />
+<img class="hidden-logo" src="/images/locale/jp/logotype.png" />
 <div class="image-cache"></div>	</main>
 
 	<footer>
 		<div class="left">
 	<div class="locale-selector">
-		<label for="locale-selector-element">Language</label>
+		<label for="locale-selector-element">言語</label>
 		<select id="locale-selector-element" onchange="document.location = this.value;">
-			<option value="/" selected 
-					>United States</option>
-	<option value="/jp" 
-					>日本語</option>
-	</select>
+							<option value="/" 
+									>United States</option>
+					<option value="/jp" 
+					selected				>日本語</option>
+					</select>
 	</div>
 	<div class="legal-logos">
 		<img src="/images/legal/fox-logo.png" />

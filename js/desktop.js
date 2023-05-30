@@ -27925,7 +27925,7 @@ define("common/views/EndingView", ["common/views/Section", "common/views/EndingV
         }, i.prototype.onDownloadClick = function(e) {
             return peanuts.audio.ButtonMenuItem.play(), this.actionOptions.classList.remove("active"), this.downloadOptions.classList.add("active"), this.downloadMenu.reset(), this.downloadMenu.initDownload()
         }, i.prototype.onShareClick = function(e) {
-            peanuts.alert.message("Sharing is currently disabled");
+            peanuts.alert.message(document.documentElement.classList.contains("locale-jp")?"この機能は無効です":"Sharing is currently disabled");
             /* AGE GATE OVERRIDE
             peanuts.agegate.isVerified = true;
             return peanuts.audio.ButtonMenuItem.play(), peanuts.agegate.open(function(e) {
