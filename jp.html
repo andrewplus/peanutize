@@ -546,7 +546,7 @@
 		<div class="left">
 	<div class="locale-selector">
 		<label for="locale-selector-element">言語</label>
-		<select id="locale-selector-element" onchange="document.location = this.value;">
+		<select id="locale-selector-element" onchange="document.location = this.value; localStorage.setItem('LanguageOverride', true)">
 							<option value="/" 
 									>United States</option>
 					<option value="/jp" 

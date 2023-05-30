@@ -29,6 +29,14 @@
 <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/favicon/apple-touch-114x114.png" />
 <!--<link rel="apple-touch-icon" sizes="72x72" href="/images/icons/favicon/apple-touch-144x144.png" />
 <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/favicon/apple-touch-144x144.png" />-->
+
+<!-- JP redirection -->
+<script>
+	var language = window.navigator.userLanguage || window.navigator.language;
+	console.log("Navigator language: " + language);
+	if (language === "ja" && localStorage.getItem("LanguageOverride") !== "true") window.location = "/jp"
+</script>
+
 				<script src="//use.typekit.net/ztg8kwe.js"></script>
 <script>try{Typekit.load();}catch(e){}</script>
 	<!--<link rel="stylesheet" href="/js/vendor/videojs/dist/video-js/video-js.min.css" />-->
@@ -546,7 +554,7 @@
 		<div class="left">
 	<div class="locale-selector">
 		<label for="locale-selector-element">Language</label>
-		<select id="locale-selector-element" onchange="document.location = this.value;">
+		<select id="locale-selector-element" onchange="document.location = this.value; localStorage.setItem('LanguageOverride', true)">
 			<option value="/" selected 
 					>United States</option>
 	<option value="/jp" 
