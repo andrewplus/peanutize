@@ -1,0 +1,69 @@
+/* PELOADER */
+.preloader-section h2 {
+    font-size: 50px;
+}
+
+/* MENU */
+.modals .modal .options button {
+    width: 85%;
+}
+
+.modals .modal .options .linus {
+    display: none;
+}
+
+.modals .modal .buy {
+    display: none;
+}
+
+.modals .modal .close-menu {
+    top: -3vh;
+}
+
+/* LANDING SECTION */
+
+.landing-section .snoopy-cta, .mycharacters-section .snoopy-cta {
+    display: none;
+}
+
+.sound-toggle {
+    right: 20px;
+    top: 15px;
+}
+
+.logotype-wrapper {
+    display: none;
+}
+
+.landing-section .bubbles, .mycharacters-section .bubbles {
+    /* left: initial;
+    top: 86%;
+    transform: scale(0.8); */
+    display: none;
+}
+
+.landing-section .create-character, .mycharacters-section .create-character {
+    margin: 0;
+    top: initial;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    padding: 0;
+    padding-bottom: 3vh;
+    -webkit-transform: initial;
+    -moz-transform: initial;
+    transform: initial;
+    text-align: center;
+}
+
+.landing-section .woodstock, .mycharacters-section .woodstock {
+    display: none;
+}
+
+.landing-section .create-character .new, .mycharacters-section .create-character .new {
+    margin-top: 0px;
+}
+
+.landing-section .left-arrow, .landing-section .right-arrow, .mycharacters-section .left-arrow, .mycharacters-section .right-arrow, .landing-section .right-arrow-timer, .mycharacters-section .right-arrow-timer {
+    transform: scale(0.8);
+}

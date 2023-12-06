@@ -3997,11 +3997,12 @@ define("desktop/views/ResizeView", [], function() {
             var e, t;
             return t = window.innerWidth, e = window.innerHeight, this.isTablet ? (document.querySelector("html").style.height = e + "px", document.querySelector("main").style.height = e + "px", document.body.style.height = e + "px", e > t ? this.show() : this.hide()) : t < this.minWidth || e < this.minHeight ? this.show() : this.hide()
         }, e.prototype.show = function() {
-            var e;
-            return this.visible === !1 ? (this.visible = !0, e = JS_CONFIG.strings.error.resize, this.isTablet && (e = JS_CONFIG.strings.error.rotate), peanuts.alert.message({
-                message: e,
-                autoHide: -1
-            })) : void 0
+            // Andrew change: removed "resize" and "rotate" messages
+            //var e;
+            // return this.visible === !1 ? (this.visible = !0, e = JS_CONFIG.strings.error.resize, this.isTablet && (e = JS_CONFIG.strings.error.rotate), peanuts.alert.message({
+            //     message: e,
+            //     autoHide: -1
+            // })) : void 0
         }, e.prototype.hide = function() {
             return this.visible ? (this.visible = !1, peanuts.alert.clear()) : void 0
         }, e
@@ -19339,10 +19340,12 @@ define("common/CharacterRenderer", ["common/Camera", "common/SlotDefinitions"], 
             return null == i && (i = .2), i > 0 ? this.animatedCameraStart(e, t, s, 800 * i) : (this.cx = e, this.cy = t, this.zoom = s * d[this.scaleName] * 2, this.cameraUpdated = !0)
         }, s.prototype.fullCharacterView = function(e) {
             var t;
-            return null == e && (e = 0), this.cameraMode = "full", t = this.slotZooms.full, this.changeView(t.x, t.y, t.zoom, e)
+            var xOffset = isMobile ? 50 : 0;
+            return null == e && (e = 0), this.cameraMode = "full", t = this.slotZooms.full, this.changeView(t.x + xOffset, t.y, t.zoom, e)
         }, s.prototype.zoomToPart = function(e, t) {
             var s;
-            return null == t && (t = 1), null == e && (e = "skin"), this.cameraMode = e, s = this.slotZooms[e], s ? (this.changeView(s.x, s.y, s.zoom / (.5 / d[this.scaleName]), t), !0) : !1
+            var xOffset = isMobile ? 50 : 0;
+            return null == t && (t = 1), null == e && (e = "skin"), this.cameraMode = e, s = this.slotZooms[e], s ? (this.changeView(s.x + xOffset, s.y, s.zoom / (.5 / d[this.scaleName]), t), !0) : !1
         }, s.prototype.updateCamera = function() {
             var e, t;
             return t = window.innerWidth, e = window.innerHeight, this.camera.moveTo(this.cx * d[this.scaleName], this.cy * d[this.scaleName]), this.camera.zoomTo(1080 * this.zoom * (t / e)), this.cameraUpdated = !1
