@@ -4,6 +4,16 @@
 }
 
 /* MENU */
+.logo.visible {
+    -webkit-transform: scale(.66, .66);
+    -ms-transform: scale(.66, .66);
+    transform: scale(.66, .66);
+    left: 20px;
+    top: 15px;
+    right: unset;
+    transform-origin: top left;
+}
+
 .modals .modal .options button {
     width: 85%;
 }
@@ -51,7 +61,7 @@
     padding: 0;
     padding-bottom: 3vh;
     -webkit-transform: initial;
-    -moz-transform: initial;
+    -ms-transform: initial;
     transform: initial;
     text-align: center;
 }
@@ -65,5 +75,226 @@
 }
 
 .landing-section .left-arrow, .landing-section .right-arrow, .mycharacters-section .left-arrow, .mycharacters-section .right-arrow, .landing-section .right-arrow-timer, .mycharacters-section .right-arrow-timer {
-    transform: scale(0.8);
+    transform: scale(0.9);
 }
+
+/* GENDER, SPECIES, DOG SELECT */
+.character {
+    -webkit-transform: scale(1, 1) !important;
+    -ms-transform: scale(1, 1) !important;
+    transform: scale(1, 1) !important;
+}
+
+.scale-wrapper {
+    -webkit-transform: scale(1, 1) !important;
+    -ms-transform: scale(1, 1) !important;
+    transform: scale(1, 1) !important;
+}
+
+.position-wrapper {
+    -webkit-transform: scale(1, 1) !important;
+    -ms-transform: scale(1, 1) !important;
+    transform: scale(1, 1) !important;
+}
+
+.genderselect-section .select-area:hover ~ .or, .speciesselect-section .select-area:hover ~ .or {
+    -webkit-transform: translate(-50%, -50%) scale(1) !important;
+    -ms-transform: translate(-50%, -50%) scale(1) !important;
+    transform: translate(-50%, -50%) scale(1) !important;
+    opacity: 1 !important;
+}
+
+.genderselect-section .character label, .speciesselect-section .character label {
+    -webkit-transform: translate(0) scale(1) !important;
+    -ms-transform: translate(0) scale(1) !important;
+    transform: translate(0) scale(1) !important;
+    opacity: 1 !important;
+}
+
+.species-label, .gender-label {
+    width: 100%;
+    text-align: center !important;
+    bottom: 9%;
+    top: unset !important;
+    left: unset !important;
+    right: unset !important;
+    font-size: 32px !important;
+}
+
+.dog-label {
+    -webkit-transform: translate(-50%) scale(1) !important;
+    -ms-transform: translate(-50%) scale(1) !important;
+    transform: translate(-50%) scale(1) !important;
+    opacity: 1 !important;
+}
+
+.species-label::after, .species-label::before, .gender-label::before, .gender-label::after {
+    display: none !important;
+}
+
+.genderselect-section .character img, .speciesselect-section .character img {
+    width: 40vw;
+    height: auto;
+    position: absolute;
+}
+
+.speciesselect-section .character.dog img {
+    width: 60vw;
+}
+
+.genderselect-section .character, .speciesselect-section .character {
+    bottom: initial;
+}
+
+.speciesselect-section .character, .genderselect-section .character, .dogselect-section .character {
+    position: static;
+    display: block;
+    width: 100vw;
+    height: 50vh;
+}
+
+.or {
+    margin-top: 3%;
+}
+
+.speciesselect-section, .genderselect-section, .dogselect-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.dogselect-section::before {
+    content: '';
+    height: 15%;
+}
+
+.dogselect-section::after {
+    content: '';
+    height: 5%;
+}
+
+.speciesselect-section {
+    flex-direction: column-reverse;
+}
+
+.speciesselect-section .dog.select-area, .genderselect-section .girl.select-area {
+    top: unset;
+    bottom: 0;
+    left: 0;
+    right: unset;
+    height: 40vh;
+    width: 100vw;
+}
+
+.speciesselect-section .human.select-area, .genderselect-section .boy.select-area {
+    top: 0;
+    bottom: unset;
+    left: 0;
+    right: unset;
+    height: 45vh;
+    width: 100vw;
+}
+
+.dogselect-section .select-area.small-dog {
+    left: 0;
+    width: 100%;
+    height: calc(100% / 3);
+    top: 0;
+}
+
+.dogselect-section .select-area.medium-dog {
+    left: 0;
+    width: 100%;
+    height: calc(100% / 3);
+    top: calc(100% / 3);
+}
+
+.dogselect-section .select-area.large-dog {
+    left: 0;
+    width: 100%;
+    height: calc(100% / 3);
+    top: calc(100% / 3 * 2);
+}
+
+/* CHARACTER CREATOR */
+.creator-section .zoom-out, .creator-section .parts-label, .creator-section .parts-label-static {
+    display: none;
+}
+
+.creator-section .finish {
+    right: unset;
+    left: 14px;
+    top: 128px;
+    transform: scale(0.6);
+}
+
+.creator-section .parts {
+    left: unset;
+    right: -45px;
+    transform: scale(0.6);
+    top: 0;
+    bottom: 0;
+    /* transform: scale(0.7) translateY(-60%);
+    display: block; */
+}
+
+.creator-section .parts .action:hover:after, .creator-section .parts .action:hover span {
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1);
+}
+
+.part-types-parent {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 10vh;
+    margin-bottom: 6vh;
+}
+
+.part-types-relative {
+    position: relative;
+    height: 100%;
+}
+
+.part-types {
+    bottom: 64px;
+    text-wrap: nowrap;
+    transform: translateY(-30px) translateX(0vw) scale(0.5);
+}
+
+.creator-section .part-types li {
+    margin-left: 0;
+    margin-top: 0;
+}
+
+.creator-section .part-types li.selected {
+    box-shadow: 0 0 0 16px #f5f5f5;
+}
+
+.creator-section .left-arrow, .creator-section .right-arrow {
+    display: none;
+}
+
+/* .part-colors {
+    position: absolute;
+    display: flex;
+    width: 100vw;
+    height: 100px;
+    bottom: 35px;
+    left: 0;
+    justify-content: space-evenly;
+}
+
+.part-colors > li {
+    display: inline-block !important;
+    transform: scale(1) !important;
+    opacity: 1 !important;
+    position: static !important;
+    width: 25px !important;
+    height: 25px !important;
+    margin: 0 !important;
+}
+
+.part-colors > li.selected {
+    transform: scale(1.2) !important;
+} */
