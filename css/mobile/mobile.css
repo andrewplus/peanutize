@@ -267,7 +267,7 @@
 
 .isMobile .part-types {
     bottom: 64px;
-    text-wrap: nowrap;
+    white-space: nowrap;
     transform: translateY(-30px) translateX(0vw) scale(0.5);
 }
 
