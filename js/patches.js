@@ -50,7 +50,7 @@ document.getElementsByClassName("download-characterOnly")[0].addEventListener("c
 
 // part-types position fix for mobile
 function partTypesFix() {
-    document.querySelector(".part-types").style.left = (0.25 * window.innerWidth + -66.25) + "px";
+    if (isMobile) document.querySelector(".part-types").style.left = (0.25 * window.innerWidth + -66.25) + "px";
 }
 
 window.addEventListener("resize", partTypesFix);

@@ -19332,7 +19332,7 @@ define("common/CharacterRenderer", ["common/Camera", "common/SlotDefinitions"], 
             this.onResize = bind(this.onResize, this), this.stageId = (null != t ? t.stageId : void 0) || "stage", this.canvas = document.getElementById(this.stageId), this.ctx = this.canvas.getContext("2d"), this.camera = new e(this.ctx), this.stopRender = false, this.imagecache = document.querySelector(".image-cache"), this.scaleName = (null != t ? t.scale : void 0) || "medium", (null != t ? t.characterCode : void 0) ? (this.characterCode = t.characterCode, this.setGender()) : this.resetCharacter(), this.onResize(), window.addEventListener("resize", this.onResize, true), this.fullCharacterView(), this.logoImage = new Image, this.logoImage.src = "/images/locale/" + JS_CONFIG.active_locale.name + "/logotype.png", this.renderFunc = this.render.bind(this)
         }
         var i, n, o, r, a, c, l, u, d, h, p;
-        var mobileXOffset = isMobile ? 60 : 0;
+        var mobileXOffset = isMobile ? 45 : 0; // Andrew change (mobile X offset for character renderer)
         return s.prototype.onResize = function () {
             return this.ratio = window.devicePixelRatio || 1, this.camera.updateViewport(), this.canvas.style.width = window.innerWidth + "px", this.canvas.style.height = window.innerHeight + "px", this.canvas.width = window.innerWidth * this.ratio, this.canvas.height = window.innerHeight * this.ratio, window.innerWidth / this.ratio <= 1024 / this.ratio ? this.bgScale = "half/" : this.bgScale = "", this.refocusCamera()
         }, s.prototype.lastTick = 0, s.prototype.render = function (e) {
@@ -27745,7 +27745,7 @@ define("common/views/EndingViews/DownloadMenu", ["common/util/BrowserUtil"], fun
     var t;
     return t = function () {
         function t(t) {
-            this.onDownloadImageEnd = bind(this.onDownloadImageEnd, this), this.onDownloadImageStart = bind(this.onDownloadImageStart, this), this.container = t, this.downloadAvatarButton = this.container.getElementsByClassName("download-avatar")[0], this.downloadAvatarImage = this.container.getElementsByClassName("download-avatar-image")[0], this.downloadWallpaperButton = this.container.getElementsByClassName("download-wallpaper")[0], this.downloadWallpaperImage = this.container.getElementsByClassName("download-wallpaper-image")[0], isMobile === true ? (this.addListeners(), this.downloadAvatarImage.addEventListener("touchend", function () {
+            this.onDownloadImageEnd = bind(this.onDownloadImageEnd, this), this.onDownloadImageStart = bind(this.onDownloadImageStart, this), this.container = t, this.downloadAvatarButton = this.container.getElementsByClassName("download-avatar")[0], this.downloadAvatarImage = this.container.getElementsByClassName("download-avatar-image")[0], this.downloadWallpaperButton = this.container.getElementsByClassName("download-wallpaper")[0], this.downloadWallpaperImage = this.container.getElementsByClassName("download-wallpaper-image")[0], false ? (this.addListeners(), this.downloadAvatarImage.addEventListener("touchend", function () {
                 return window.peanuts.track.event("My Character", "Download", "Profile (Mobile)")
             }), this.downloadWallpaperImage.addEventListener("touchend", function () {
                 return window.peanuts.track.event("My Character", "Download", "Wallpaper (Mobile)")
@@ -27766,7 +27766,7 @@ define("common/views/EndingViews/DownloadMenu", ["common/util/BrowserUtil"], fun
                 return function (t, s) {
                     return e.downloadAvatarButton.href = t, e.downloadWallpaperButton.href = s, e.downloadReady()
                 }
-            }(this))) : (peanuts.spinner.show(), isMobile === true ? peanuts.creator.data.cr.prerenderCharacter(void 0, void 0, void 0, void 0, function (e) {
+            }(this))) : (peanuts.spinner.show(), false ? peanuts.creator.data.cr.prerenderCharacter(void 0, void 0, void 0, void 0, function (e) {
                 return function (t) {
                     return e.downloadAvatarImage.src = peanuts.creator.data.cr.renderImage("downloadAvatar", 1200, 1200, t), e.downloadReady()
                 }

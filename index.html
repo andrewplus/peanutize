@@ -35,14 +35,6 @@
 	var language = window.navigator.userLanguage || window.navigator.language;
 	console.log("Navigator language: " + language);
 	if (language === "ja" && localStorage.getItem("LanguageOverride") !== "true") window.location = "/jp"
-
-	// Detect mobile
-	var isMobile = false;
-	//if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth / window.innerHeight < 1) {
-	if(window.innerWidth / window.innerHeight < 1) {
-	//if(true) {
-		isMobile = true;
-	} 
 </script>
 
 				<script src="//use.typekit.net/ztg8kwe.js"></script>
@@ -599,8 +591,16 @@
 	</div>
 </div>
 	</footer>
-	<div style="position: absolute; color: red; width: 1px; height: 25px; left: 50%; bottom: -25px; z-index: 9999"></div>
 
+	<script>
+		// Detect mobile
+		var isMobile = false;
+		if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth / window.innerHeight < 1) {
+			document.documentElement.classList.add("isMobile");
+			isMobile = true;
+			console.log("Likely using a mobile device in portrait mode")
+		} 
+	</script>
 	<script src="/js/patches.js"></script>
 	<script src="/js/desktop.js"></script>
 </body>
