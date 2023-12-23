@@ -579,7 +579,16 @@
 </div>
 	</footer>
 
+	<script>
+		// Detect mobile
+		var isMobile = false;
+		if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth / window.innerHeight < 1) {
+			document.documentElement.classList.add("isMobile");
+			isMobile = true;
+			console.log("Likely using a mobile device in portrait mode")
+		} 
+	</script>
 	<script src="/js/patches.js"></script>
-	<script src="/js/desktop.min.js"></script>
+	<script src="/js/desktop.js"></script>
 </body>
 </html>
