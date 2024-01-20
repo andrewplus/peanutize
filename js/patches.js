@@ -47,3 +47,30 @@ document.getElementsByClassName("download-characterOnly")[0].addEventListener("c
     link.href = image;
     link.click();
 });
+
+// Detect mobile
+var isMobile = false;
+
+function detectMobile() {
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth / window.innerHeight < 1) {
+        document.documentElement.classList.add("isMobile");
+        isMobile = true;
+    } else {
+        document.documentElement.classList.remove("isMobile");
+        isMobile = false;
+    }
+}
+
+detectMobile();
+window.addEventListener("resize", detectMobile);
+
+// Part-types position fix for mobile
+function partTypesFix() {
+    if (isMobile) 
+        document.querySelector(".part-types").style.left = (0.25 * window.innerWidth + -66.25) + "px";
+    else
+        document.querySelector(".part-types").style.left = "initial";
+}
+
+window.addEventListener("resize", partTypesFix);
+partTypesFix();

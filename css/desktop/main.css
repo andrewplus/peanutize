@@ -1628,7 +1628,7 @@ main {
 		padding: 10px 4px
 	}
 
-	.ending-section .end-character .share-twitter,.ending-section .end-character .share-facebook,.ending-section .end-character .share-weibo,.ending-section .end-character .download-character,.ending-section .end-character .download-wallpaper,.ending-section .end-character .share-character,.ending-section .end-character .download-avatar,.ending-section .end-character .download-wallpaper {
+	.ending-section .end-character .share-twitter,.ending-section .end-character .share-facebook,.ending-section .end-character .share-weibo,.ending-section .end-character .download-character,.ending-section .end-character .download-wallpaper,.ending-section .end-character .share-character,.ending-section .end-character .download-avatar,.ending-section .end-character .download-wallpaper,.ending-section .options .download-characterOnly {
 		padding: 0 25px;
 		font-size: 24px;
 		line-height: 64px;
@@ -3141,4 +3141,8 @@ footer .center {
 .logotype-wrapper img {
 	width: 175px;
 	height: 124px
+}
+
+#locale-selector-element {
+	letter-spacing:initial
 }

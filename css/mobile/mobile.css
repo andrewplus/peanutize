@@ -1,0 +1,415 @@
+/* PELOADER */
+.isMobile .preloader-section h2 {
+    font-size: 50px;
+}
+
+/* MENU */
+.isMobile .logo.visible {
+    -webkit-transform: scale(.66, .66);
+    -ms-transform: scale(.66, .66);
+    transform: scale(.66, .66);
+    left: 20px;
+    top: 15px;
+    right: unset;
+    transform-origin: top left;
+}
+
+.isMobile .modals .modal .options button {
+    width: 85%;
+}
+
+.isMobile .modals .modal .options .linus {
+    display: none;
+}
+
+.isMobile .modals .modal .buy {
+    display: none;
+}
+
+.isMobile .modals .modal .close-menu {
+    top: -3vh;
+}
+
+/* LANDING SECTION */
+
+.isMobile .landing-section .snoopy-cta, .isMobile .mycharacters-section .snoopy-cta {
+    display: none;
+}
+
+.isMobile .sound-toggle {
+    right: 20px;
+    top: 15px;
+}
+
+.isMobile .logotype-wrapper {
+    display: none;
+}
+
+.isMobile .landing-section .bubbles, .mycharacters-section .bubbles {
+    /* left: initial;
+    top: 86%;
+    transform: scale(0.8); */
+    display: none;
+}
+
+.isMobile .landing-section .create-character, .isMobile .mycharacters-section .create-character {
+    margin: 0;
+    top: initial;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    padding: 0;
+    padding-bottom: 3vh;
+    -webkit-transform: initial;
+    -ms-transform: initial;
+    transform: initial;
+    text-align: center;
+}
+
+.isMobile .landing-section .woodstock, .mycharacters-section .woodstock {
+    display: none;
+}
+
+.isMobile .landing-section .create-character .new, .isMobile .mycharacters-section .create-character .new {
+    margin-top: 0px;
+}
+
+.isMobile .landing-section .left-arrow, .isMobile .landing-section .right-arrow, .isMobile .mycharacters-section .left-arrow, .isMobile .mycharacters-section .right-arrow, .isMobile .landing-section .right-arrow-timer, .isMobile .mycharacters-section .right-arrow-timer {
+    transform: scale(0.9);
+}
+
+/* GENDER, SPECIES, DOG SELECT */
+.isMobile .character {
+    -webkit-transform: scale(1, 1) !important;
+    -ms-transform: scale(1, 1) !important;
+    transform: scale(1, 1) !important;
+}
+
+.isMobile .scale-wrapper {
+    -webkit-transform: scale(1, 1) !important;
+    -ms-transform: scale(1, 1) !important;
+    transform: scale(1, 1) !important;
+}
+
+.isMobile .position-wrapper {
+    -webkit-transform: scale(1, 1) !important;
+    -ms-transform: scale(1, 1) !important;
+    transform: scale(1, 1) !important;
+}
+
+.isMobile .genderselect-section .select-area:hover ~ .or, .isMobile .speciesselect-section .select-area:hover ~ .or {
+    -webkit-transform: translate(-50%, -50%) scale(1) !important;
+    -ms-transform: translate(-50%, -50%) scale(1) !important;
+    transform: translate(-50%, -50%) scale(1) !important;
+    opacity: 1 !important;
+}
+
+.isMobile .genderselect-section .character label, .isMobile .speciesselect-section .character label {
+    -webkit-transform: translate(0) scale(1) !important;
+    -ms-transform: translate(0) scale(1) !important;
+    transform: translate(0) scale(1) !important;
+    opacity: 1 !important;
+}
+
+.isMobile .species-label, .isMobile .gender-label {
+    width: 100%;
+    text-align: center !important;
+    bottom: 9%;
+    top: unset !important;
+    left: unset !important;
+    right: unset !important;
+    font-size: 32px !important;
+}
+
+.isMobile .dog-label {
+    -webkit-transform: translate(-50%) scale(1) !important;
+    -ms-transform: translate(-50%) scale(1) !important;
+    transform: translate(-50%) scale(1) !important;
+    opacity: 1 !important;
+}
+
+.isMobile .species-label::after, .isMobile .species-label::before, .isMobile .gender-label::before, .isMobile .gender-label::after {
+    display: none !important;
+}
+
+.isMobile .genderselect-section .character img, .isMobile .speciesselect-section .character img {
+    /* max-width: 154px; */
+    width: 30vw;
+    height: auto;
+    position: absolute;
+}
+
+.isMobile .speciesselect-section .character img, .isMobile .dogselect-section .character img, .isMobile .genderselect-section .character img {
+    width: 154px;
+}
+
+.isMobile .speciesselect-section .character.dog img {
+    width: 200px !important;
+}
+
+.isMobile .genderselect-section .character, .isMobile .speciesselect-section .character {
+    bottom: initial;
+}
+
+.isMobile .speciesselect-section .character, .isMobile .genderselect-section .character, .isMobile .dogselect-section .character {
+    position: static;
+    display: block;
+    width: 100vw;
+    height: 50vh;
+}
+
+.isMobile .or {
+    margin-top: 3%;
+}
+
+.isMobile .speciesselect-section, .isMobile .genderselect-section, .isMobile .dogselect-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.isMobile .dogselect-section::before {
+    content: '';
+    height: 15%;
+}
+
+.isMobile .dogselect-section::after {
+    content: '';
+    height: 5%;
+}
+
+.isMobile .speciesselect-section {
+    flex-direction: column-reverse;
+}
+
+.isMobile .speciesselect-section .dog.select-area, .isMobile .genderselect-section .girl.select-area {
+    top: unset;
+    bottom: 0;
+    left: 0;
+    right: unset;
+    height: 40vh;
+    width: 100vw;
+}
+
+.isMobile .speciesselect-section .human.select-area, .isMobile .genderselect-section .boy.select-area {
+    top: 0;
+    bottom: unset;
+    left: 0;
+    right: unset;
+    height: 45vh;
+    width: 100vw;
+}
+
+.isMobile .dogselect-section .select-area.small-dog {
+    left: 0;
+    width: 100%;
+    height: calc(100% / 3);
+    top: 0;
+}
+
+.isMobile .dogselect-section .select-area.medium-dog {
+    left: 0;
+    width: 100%;
+    height: calc(100% / 3);
+    top: calc(100% / 3);
+}
+
+.isMobile .dogselect-section .select-area.large-dog {
+    left: 0;
+    width: 100%;
+    height: calc(100% / 3);
+    top: calc(100% / 3 * 2);
+}
+
+/* CHARACTER CREATOR */
+.isMobile .creator-section .zoom-out, .isMobile .creator-section .parts-label, .isMobile .creator-section .parts-label-static {
+    display: none;
+}
+
+.isMobile .creator-section > .finish {
+    left: 18px;
+    top: 145px;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+}
+
+/* 
+.isMobile .creator-section .parts .action.finish {
+    right: unset;
+    left: 50%;
+    top: 53% !important;
+    transform: scale(1.3) !important;
+} */
+
+.isMobile .creator-section .parts {
+    left: unset;
+    right: -45px;
+    transform: scale(0.6);
+    top: 0;
+    bottom: 0;
+    /* transform: scale(0.7) translateY(-60%);
+    display: block; */
+}
+
+.isMobile .creator-section .parts .action:hover:after, .isMobile .creator-section .parts .action:hover span {
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1);
+}
+
+.isMobile .part-types-parent {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 10vh;
+    margin-bottom: 6vh;
+}
+
+.isMobile .part-types-relative {
+    position: relative;
+    height: 100%;
+}
+
+.isMobile .part-types {
+    bottom: 64px;
+    white-space: nowrap;
+    transform: translateY(-30px) translateX(0vw) scale(0.5);
+}
+
+.isMobile .creator-section .part-types li {
+    margin-left: 0;
+    margin-top: 0;
+}
+
+.isMobile .creator-section .part-types li.selected {
+    box-shadow: 0 0 0 16px #f5f5f5;
+}
+
+.isMobile .creator-section .left-arrow, .isMobile .creator-section .right-arrow {
+    display: none;
+}
+
+.isMobile .part-colors {
+    position: absolute;
+    display: flex;
+    width: 100vw;
+    height: 100px;
+    bottom: 35px;
+    left: calc(50% - 525px / 2);
+    justify-content: space-evenly;
+    max-width: 525px;
+}
+
+@media (max-width: 525px) {
+    .isMobile .part-colors {
+        left: 0;
+        max-width: 100vw;
+    }
+}
+
+.isMobile .part-colors > li {
+    display: inline-block !important;
+    transform: scale(1) !important;
+    opacity: 1 !important;
+    position: static !important;
+    width: 22px !important;
+    height: 22px !important;
+    margin: 0 !important;
+    box-shadow: 0 0 0 2px #f5f5f5 !important;
+    transition: transform 300ms ease-in-out;
+    box-sizing: border-box;
+}
+
+.isMobile .part-colors > li:only-child {
+    display: none !important;
+}
+
+.isMobile .part-colors > li.selected {
+    transform: scale(1.2) !important;
+    box-shadow: none !important;
+    border: 3px dashed #f5f5f5;
+}
+
+/* MY CHARACTERS */
+.mycharacters-section .character-choice.visible {
+    width: 100vw;
+    padding: 20px;
+    box-sizing: border-box;
+    bottom: 0;
+    text-align: center;
+}
+
+.mycharacters-section .character-choice.visible > button {
+    padding: 0 25px;
+    font-size: 24px;
+    line-height: 64px;
+    height: 64px;
+    margin-top: 10px;
+}
+
+/* END SECTION */
+.isMobile .ending-section .end-character {
+    margin-left: 0;
+    left: 0;
+    width: 100vw;
+    bottom: 0;
+    top: unset;
+    padding-bottom: unset;
+    height: unset;
+    margin: 0 !important;
+    padding-top: unset;
+    transform: unset;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.isMobile .ending-section .end-character > h2 {
+    max-width: 310px;
+    margin: auto;
+}
+
+.isMobile .ending-section .end-character > p {
+    max-width: 290px;
+    margin: auto;
+}
+
+.isMobile .ending-section .options {
+    position: static;
+    height: unset;
+    margin: 0;
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1);
+    opacity: 1;
+    transition: 0ms !important;
+    margin-bottom: 70px;
+}
+
+.isMobile .ending-section .options:not(.active) {
+    height: 0;
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1);
+    opacity: 0;
+    margin-bottom: 0 !important;
+}
+
+.isMobile .ending-section .share-back, .isMobile .ending-section .download-back, .isMobile .ending-section .section-back {
+    left: calc(50% - 49.5px / 2);
+    top: unset;
+    bottom: -55px;
+}
+
+.isMobile .ending-section .primary-button {
+    font-size: 20px;
+    height: unset;
+    padding: 0 20px !important;
+    line-height: 64px;
+}
+
+.isMobile .ending-section .woodstock {
+    display: none;
+}
