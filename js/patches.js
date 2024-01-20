@@ -66,8 +66,11 @@ window.addEventListener("resize", detectMobile);
 
 // Part-types position fix for mobile
 function partTypesFix() {
-    if (isMobile) document.querySelector(".part-types").style.left = (0.25 * window.innerWidth + -66.25) + "px";
+    if (isMobile) 
+        document.querySelector(".part-types").style.left = (0.25 * window.innerWidth + -66.25) + "px";
+    else
+        document.querySelector(".part-types").style.left = "initial";
 }
 
 window.addEventListener("resize", partTypesFix);
-partTypesFix()
+partTypesFix();

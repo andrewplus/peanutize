@@ -133,13 +133,18 @@
 }
 
 .isMobile .genderselect-section .character img, .isMobile .speciesselect-section .character img {
-    width: 40vw;
+    /* max-width: 154px; */
+    width: 30vw;
     height: auto;
     position: absolute;
 }
 
+.isMobile .speciesselect-section .character img, .isMobile .dogselect-section .character img, .isMobile .genderselect-section .character img {
+    width: 154px;
+}
+
 .isMobile .speciesselect-section .character.dog img {
-    width: 60vw;
+    width: 200px !important;
 }
 
 .isMobile .genderselect-section .character, .isMobile .speciesselect-section .character {
