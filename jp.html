@@ -580,6 +580,38 @@
 </div>
 	</footer>
 
+	<!-- TEMPORARY COUNTERFEIT WARNING START -->
+	<div id="counterfeit-warning" style="position: fixed; font-family: sans-serif; line-height: 1.25; background-color: white; padding: 20px; border-radius: 30px; bottom: 0; left: 0; font-weight: normal; z-index: 999; max-width: 20%; display: flex; margin: 20px; box-shadow: 0px 0px 30px black;">
+		<div>
+			<h3 style="font-weight: bold; margin-bottom: 5px;">Notice about counterfeit websites</h3>
+			<p>This archive is provided as a labor of love and will never contain ads, pop-ups, or paid functionality. For your safety, please avoid counterfeit websites and ensure you are using peanutize.xyz.</p>
+		</div>
+		<div style="margin: 0 5px;">
+			<span title="Close this message" style="font-size: 20px; cursor: pointer;" id="counterfeit-warning-close" onclick="hideCounterfeitWarning()">&#215;</span>
+		</div>
+	</div>
+	<style>
+		@media (max-width: 1000px) {
+			#counterfeit-warning {
+				max-width: 100% !important;
+			}
+		}
+	</style>
+	<script>
+		const counterfeitWarning = document.getElementById("counterfeit-warning");
+		const counterfeitWarningClose = document.getElementById("counterfeit-warning-close");
+
+		function hideCounterfeitWarning() {
+			localStorage.setItem("HIDEWARNING", "1");
+			counterfeitWarning.style.display = "none";
+		}
+
+		if (localStorage.getItem("HIDEWARNING") === "1") {
+			hideCounterfeitWarning();
+		}
+	</script>
+	<!-- TEMPORARY COUNTERFEIT WARNING END -->
+
 	<script src="/js/patches.js"></script>
 	<script src="/js/desktop.js"></script>
 </body>
